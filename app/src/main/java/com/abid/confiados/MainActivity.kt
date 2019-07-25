@@ -1,5 +1,6 @@
 package com.abid.confiados
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -56,5 +57,9 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         val fragment = HomeFragment.newInstance()
         addFragment(fragment)
+
+        circleImageView.setOnClickListener {
+            startActivity(Intent(this,ProfileActivity::class.java))
+        }
     }
 }

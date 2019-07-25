@@ -36,12 +36,12 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_list_divider_material.xml.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-v21\\abc_list_divider_material.xml"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\d2aef13d19ed44d6a4677a6928fba711\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_list_divider_material.xml.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-v21\\abc_list_divider_material.xml"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_fab_ripple_color.xml.flat",
@@ -176,12 +176,12 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\color-v23\\abc_color_highlight_material.xml"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_exit.xml.flat",
@@ -204,20 +204,20 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_mtrl_chip_close_circle.xml.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\96ea14660e53c3143ea15421bf29ee2c\\res\\drawable\\ic_mtrl_chip_close_circle.xml"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_mtrl_chip_close_circle.xml.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\96ea14660e53c3143ea15421bf29ee2c\\res\\drawable\\ic_mtrl_chip_close_circle.xml"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\interpolator_mtrl_linear.xml.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\96ea14660e53c3143ea15421bf29ee2c\\res\\interpolator\\mtrl_linear.xml"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -228,12 +228,12 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\d2aef13d19ed44d6a4677a6928fba711\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "D:\\Confiados\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Confiados\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21_design_bottom_sheet_slide_out.xml.flat",
@@ -260,12 +260,12 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_light.xml.flat",
@@ -284,16 +284,16 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\bd7b6b5ca5d22d4aa79922a3a2803976\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_divider_material.xml.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable\\abc_list_divider_material.xml"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\bd7b6b5ca5d22d4aa79922a3a2803976\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_divider_material.xml.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable\\abc_list_divider_material.xml"
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\bd7b6b5ca5d22d4aa79922a3a2803976\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_dark.xml.flat",
@@ -352,24 +352,24 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow_custom.xml.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\100c06d8ae18136c984c39abbe3781d6\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_color_selector.xml.flat",
@@ -384,12 +384,12 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "D:\\Confiados\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_dark.xml.flat",
@@ -408,12 +408,12 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\96ea14660e53c3143ea15421bf29ee2c\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_menu_item_action_area.xml.flat",
-        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\96ea14660e53c3143ea15421bf29ee2c\\res\\layout\\design_menu_item_action_area.xml"
-    },
-    {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
         "source": "D:\\Confiados\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_menu_item_action_area.xml.flat",
+        "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\96ea14660e53c3143ea15421bf29ee2c\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
         "merged": "D:\\Confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",

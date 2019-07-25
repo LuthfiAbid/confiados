@@ -1119,6 +1119,7 @@ id center_vertical
 id chains
 id checkbox
 id chronometer
+id circleImageView
 id clip_horizontal
 id clip_vertical
 id collapseActionView

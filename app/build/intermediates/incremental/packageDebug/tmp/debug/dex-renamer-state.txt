@@ -1,4 +1,4 @@
-#Thu Jul 25 14:18:23 ICT 2019
+#Thu Jul 25 15:10:15 ICT 2019
 base.0=D\:\\Confiados\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex
