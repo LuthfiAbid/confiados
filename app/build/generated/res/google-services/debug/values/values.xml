@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">893389149395-4ds3eldnu4vf0li507o2k7403co9rg5b.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://confiadosproject.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">893389149395</string>
+    <string name="google_api_key" translatable="false">AIzaSyAaZSMMGxfm8chX6u7hKHQZckvNxKRvRPo</string>
+    <string name="google_app_id" translatable="false">1:893389149395:android:55584921f7c9204c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAaZSMMGxfm8chX6u7hKHQZckvNxKRvRPo</string>
+    <string name="google_storage_bucket" translatable="false">confiadosproject.appspot.com</string>
+    <string name="project_id" translatable="false">confiadosproject</string>
+</resources>
