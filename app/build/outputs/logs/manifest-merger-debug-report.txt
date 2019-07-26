@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\96ea14660e53c3143ea15421bf29ee2c\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\58e20daf8fe0749523173add752085ba\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\230aff333f34dea508826defa1b79e62\AndroidManifest.xml:2:1-11:12
@@ -68,25 +68,25 @@ MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\trainer\.gradle\cac
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\0732c4e5417fa063b34b9f962fdad2ba\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\b4ca498a1081cd9fe52e0103e78fa742\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\f9f06fac1521c0a39d01da7696876363\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:3:11-39
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:3:11-39
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:2:1-30:12
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:1-32:12
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:5:5-66
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:5:5-66
 MERGED from [com.firebaseui:firebase-ui-database:3.3.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\164c1be9504eda5d70f21752783c0f4b\AndroidManifest.xml:11:5-67
 MERGED from [com.firebaseui:firebase-ui-database:3.3.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\164c1be9504eda5d70f21752783c0f4b\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\e214d815e200504da56c34336e8d62c6\AndroidManifest.xml:26:5-67
@@ -104,17 +104,17 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\d8237d52c4a7d0edfad841789d9a50ff\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\d8237d52c4a7d0edfad841789d9a50ff\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:6:5-79
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:6:22-77
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:6:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:7:5-80
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:7:22-78
 application
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:9:5-28:19
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:9:5-30:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\96ea14660e53c3143ea15421bf29ee2c\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\96ea14660e53c3143ea15421bf29ee2c\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\230aff333f34dea508826defa1b79e62\AndroidManifest.xml:9:5-20
@@ -176,47 +176,51 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\trainer\.gradl
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\d2aef13d19ed44d6a4677a6928fba711\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:14:13-39
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:14:13-39
 	android:label
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:12:13-45
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:12:13-45
 	android:roundIcon
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:13:13-58
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:13:13-58
 	android:icon
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:11:13-47
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:11:13-47
 	android:allowBackup
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:10:13-39
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:10:13-39
 	android:theme
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:15:13-69
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:15:13-69
+activity#com.abid.confiados.ProfileActivity
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:16:9-17:20
+	android:name
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:16:19-50
 activity#com.abid.confiados.RegisterActivity
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:16:9-17:20
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:18:9-19:20
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:16:19-51
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:18:19-51
 activity#com.abid.confiados.SplashActivity
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:18:9-24:20
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:20:9-26:20
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:18:19-49
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:20:19-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:19:13-23:29
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:20:17-68
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:22:17-68
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:22:17-76
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:24:17-76
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:24:27-74
 activity#com.abid.confiados.LoginActivity
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:25:9-50
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:27:9-50
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:25:19-48
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:27:19-48
 activity#com.abid.confiados.MainActivity
-ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:26:9-27:20
+ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:28:9-29:20
 	android:name
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:26:19-47
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml:28:19-47
 uses-sdk
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:design:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\96ea14660e53c3143ea15421bf29ee2c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\96ea14660e53c3143ea15421bf29ee2c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\58e20daf8fe0749523173add752085ba\AndroidManifest.xml:20:5-44
@@ -345,16 +349,16 @@ MERGED from [android.arch.core:runtime:1.1.1] C:\Users\trainer\.gradle\caches\tr
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\b4ca498a1081cd9fe52e0103e78fa742\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\f9f06fac1521c0a39d01da7696876363\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\f9f06fac1521c0a39d01da7696876363\AndroidManifest.xml:5:5-44
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
-INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
-		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml
-		INJECTED from D:\Confiados\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+		ADDED from D:\Android\confiados\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\confiados\app\src\main\AndroidManifest.xml
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\trainer\.gradle\caches\transforms-2\files-2.1\c8ed4880e63a26ac405891a61a0d15f3\AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents

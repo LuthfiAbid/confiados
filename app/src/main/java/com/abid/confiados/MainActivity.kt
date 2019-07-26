@@ -25,17 +25,14 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_home -> {
                 val fragment = HomeFragment.newInstance()
                 addFragment(fragment)
-                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_upload -> {
                 val fragment = UploadFragment()
                 addFragment(fragment)
-                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_cart -> {
                 val fragment = CartFragment()
                 addFragment(fragment)
-                return@OnNavigationItemSelectedListener true
             }
         }
         false
