@@ -48,11 +48,6 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
         p0.tv_destination.text = destinationModel.getDestination()
         p0.tv_startDate.text = destinationModel.getStartDate()
         p0.tv_endDate.text = destinationModel.getEndDate()
-        p0.ll.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-
-            }
-        })
     }
 
     inner class DestinationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -73,7 +73,6 @@ class LoginActivity : AppCompatActivity() {
                                 override fun onCancelled(p0: DatabaseError) {
 
                                 }
-
                                 override fun onDataChange(p0: DataSnapshot) {
                                     val user = fAuth.currentUser
                                     updateUI(user)
@@ -109,6 +108,7 @@ class LoginActivity : AppCompatActivity() {
         )
 
         btn_login_google.setOnClickListener {
+            pref.setStatusGoogle(true)
             pref.setStatus(true)
             signIn()
         }
