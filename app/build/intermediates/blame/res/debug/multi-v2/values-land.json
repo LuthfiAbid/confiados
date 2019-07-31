@@ -4,7 +4,7 @@
             "outputFile": "D:\\Confiados\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\58e20daf8fe0749523173add752085ba\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\ac6c1b31d83a136321cdefa20e62125d\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\96ea14660e53c3143ea15421bf29ee2c\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\1f3e328cd17a359dfe5e160e04a7592e\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
