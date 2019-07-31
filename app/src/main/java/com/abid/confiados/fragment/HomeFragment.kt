@@ -9,7 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.abid.confiados.Preferences
+import com.abid.confiados.data.Preferences
 import com.abid.confiados.R
 import com.abid.confiados.adapter.DestinationAdapter
 import com.abid.confiados.model.DestinationModel

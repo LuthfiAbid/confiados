@@ -1,4 +1,4 @@
-package com.abid.confiados
+package com.abid.confiados.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.widget.FrameLayout
+import com.abid.confiados.data.Preferences
+import com.abid.confiados.R
 import com.abid.confiados.fragment.CartFragment
 import com.abid.confiados.fragment.HomeFragment
 import com.bumptech.glide.Glide
@@ -41,7 +43,10 @@ class MainActivity : AppCompatActivity() {
     private fun addFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+            .setCustomAnimations(
+                R.anim.design_bottom_sheet_slide_in,
+                R.anim.design_bottom_sheet_slide_out
+            )
             .replace(R.id.content, fragment, fragment.javaClass.simpleName)
             .commit()
     }
@@ -75,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         profileMain.setOnClickListener {
-            startActivity(Intent(this,ProfileActivity::class.java))
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 }

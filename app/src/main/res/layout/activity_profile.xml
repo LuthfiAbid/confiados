@@ -17,7 +17,7 @@
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            tools:context=".MainActivity">
+            tools:context=".activity.MainActivity">
         <LinearLayout
                 android:background="#033970"
                 android:layout_width="match_parent"
@@ -50,22 +50,24 @@
                 app:layout_constraintVertical_bias="0.785"
                 android:id="@+id/profilePic"/>
         <Button
-                android:layout_width="87dp"
-                android:layout_height="43dp"
-                android:text="Confidos "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confidos"
+                android:id="@+id/btn_confiados"
                 android:background="#022d58"
                 android:textColor="#ffff"
                 android:textSize="12sp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.077"
                 app:layout_constraintVertical_bias="0.797"/>
 
         <Button
                 android:id="@+id/btn_logout"
-                android:layout_width="87dp"
-                android:layout_height="43dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="LOGOUT"
                 android:textSize="12sp"
                 android:textColor="#ffff"

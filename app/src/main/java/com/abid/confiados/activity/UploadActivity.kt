@@ -1,4 +1,4 @@
-package com.abid.confiados
+package com.abid.confiados.activity
 
 import android.Manifest
 import android.app.Activity
@@ -15,13 +15,23 @@ import android.util.Log
 import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.Toast
+import com.abid.confiados.data.Preferences
+import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_upload.*
 import kotlinx.android.synthetic.main.fragment_upload.*
+import kotlinx.android.synthetic.main.fragment_upload.btnUploadDestination
+import kotlinx.android.synthetic.main.fragment_upload.endDateUpload
+import kotlinx.android.synthetic.main.fragment_upload.imagePHolder
+import kotlinx.android.synthetic.main.fragment_upload.progressDownload
+import kotlinx.android.synthetic.main.fragment_upload.startDateUpload
+import kotlinx.android.synthetic.main.fragment_upload.uploadDestination
 import java.io.IOException
 import java.util.*
 
@@ -42,11 +52,15 @@ class UploadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload)
+        setSupportActionBar(toolbarUpload)
+        supportActionBar!!.title = "UPLOAD DESTINATION"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         destinationModel = DestinationModel()
         fAuth = FirebaseAuth.getInstance()
         pref = Preferences(this)
         firebaseStorage = FirebaseStorage.getInstance()
         storageReference = firebaseStorage.reference
+
         imagePHolder.setOnClickListener {
             when {
                 (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) -> {

@@ -1,4 +1,4 @@
-package com.abid.confiados
+package com.abid.confiados.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import com.abid.confiados.adapter.DestinationAdapter
+import com.abid.confiados.data.Preferences
+import com.abid.confiados.R
 import com.abid.confiados.adapter.DestinationProfileAdapter
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
@@ -113,6 +114,14 @@ class ProfileActivity : AppCompatActivity() {
                 )
             }
         })
+
+        btn_confiados.setOnClickListener {
+            startActivity(
+                Intent(
+                    this, Confiados::class.java
+                )
+            )
+        }
 
         btn_logout.setOnClickListener {
             pref.setStatus(false)
