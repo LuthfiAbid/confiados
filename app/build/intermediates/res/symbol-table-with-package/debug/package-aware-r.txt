@@ -1054,6 +1054,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_person
 drawable logo
+drawable maldives
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1115,6 +1116,8 @@ id bottom
 id btnUploadDestination
 id btn_login
 id btn_login_google
+id btn_logout
+id button
 id buttonPanel
 id cancel_action
 id ccc
@@ -1192,10 +1195,12 @@ id left
 id light
 id line1
 id line3
+id linearLayout
+id linearLayout2
+id linearLayout3
 id listMode
 id list_item
 id ll
-id logout
 id masked
 id media_actions
 id message
@@ -1290,6 +1295,10 @@ id textDestination
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
+id textView3
+id textView4
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1298,6 +1307,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
 id top
 id topPanel
 id touch_outside
