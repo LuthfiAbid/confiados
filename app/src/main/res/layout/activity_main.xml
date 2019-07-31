@@ -30,6 +30,12 @@
                 android:textColor="#ffff"
                 android:textSize="24sp"
                 android:id="@+id/title"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/upload_destination"
+                android:src="@android:drawable/ic_menu_upload"/>
     </RelativeLayout>
     <FrameLayout
             android:id="@+id/content"

@@ -8,6 +8,7 @@ class Preferences {
     val COUNTER_ID = "counter"
     val statusLogin = "STATUS"
     val statusUserSlur = "STATUS_USER"
+    val dest = "DESTINATION"
 
 
     var mContext: Context
@@ -64,5 +65,25 @@ class Preferences {
 
     fun cekStatus(): Boolean? {
         return sharedSet.getBoolean(statusLogin, false)
+    }
+
+    fun setNama(nama: String) {
+        val edit = sharedSet.edit()
+        edit.putString("nama", nama)
+        edit.apply()
+    }
+
+    fun getNama(): String? {
+        return sharedSet.getString("nama", "")
+    }
+
+    fun setStatusGoogle(statusGoogle: Boolean) {
+        val edit = sharedSet.edit()
+        edit.putBoolean("sGoogle", statusGoogle)
+        edit.apply()
+    }
+
+    fun cekStatusGoogle(): Boolean? {
+        return sharedSet.getBoolean("sGoogle", false)
     }
 }

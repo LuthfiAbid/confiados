@@ -9,9 +9,9 @@ import android.support.v7.widget.RecyclerView
 import android.widget.FrameLayout
 import com.abid.confiados.fragment.CartFragment
 import com.abid.confiados.fragment.HomeFragment
-import com.abid.confiados.fragment.UploadFragment
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
                 val fragment = HomeFragment.newInstance()
                 addFragment(fragment)
             }
-            R.id.navigation_upload -> {
-                val fragment = UploadFragment()
-                addFragment(fragment)
-            }
+//            R.id.navigation_chat -> {
+//                val fragment = UploadFragment()
+//                addFragment(fragment)
+//            }
             R.id.navigation_cart -> {
                 val fragment = CartFragment()
                 addFragment(fragment)
@@ -54,6 +54,25 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         val fragment = HomeFragment.newInstance()
         addFragment(fragment)
+
+        FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
+            .child("profile").addListenerForSingleValueEvent(object : ValueEventListener {
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    Glide.with(this@MainActivity).load(p0.value.toString())
+                        .centerCrop()
+                        .error(R.drawable.ic_launcher_background)
+                        .into(circleImageView)
+                }
+
+                override fun onCancelled(p0: DatabaseError) {
+                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                }
+            })
+
+        upload_destination.setOnClickListener {
+            startActivity(Intent(this, UploadActivity::class.java))
+        }
 
         circleImageView.setOnClickListener {
             startActivity(Intent(this,ProfileActivity::class.java))
