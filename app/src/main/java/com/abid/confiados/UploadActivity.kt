@@ -165,7 +165,6 @@ class UploadActivity : AppCompatActivity() {
                             }
 
                         })
-
             }
             Toast.makeText(
                 this,

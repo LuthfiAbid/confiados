@@ -11,7 +11,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profile.*
-import kotlinx.android.synthetic.main.activity_profile.circleImageView
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var pref: Preferences
@@ -32,7 +31,7 @@ class ProfileActivity : AppCompatActivity() {
                     Glide.with(this@ProfileActivity).load(p0.value.toString())
                         .centerCrop()
                         .error(R.drawable.ic_launcher_background)
-                        .into(circleImageView)
+                        .into(profilePic)
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
@@ -40,6 +39,39 @@ class ProfileActivity : AppCompatActivity() {
                 }
             })
 
+        FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
+            .child("nama").addListenerForSingleValueEvent(object : ValueEventListener {
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    profileName.text = p0.value.toString()
+                }
+
+                override fun onCancelled(p0: DatabaseError) {
+
+                }
+            })
+        FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
+            .child("phone").addListenerForSingleValueEvent(object : ValueEventListener {
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    noTelepon.text = p0.value.toString()
+                }
+
+                override fun onCancelled(p0: DatabaseError) {
+
+                }
+            })
+        FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
+            .child("gender").addListenerForSingleValueEvent(object : ValueEventListener {
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    profileGender.text = p0.value.toString()
+                }
+
+                override fun onCancelled(p0: DatabaseError) {
+
+                }
+            })
 
         btn_logout.setOnClickListener {
             pref.setStatus(false)
