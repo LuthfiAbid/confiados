@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Confiados</string>
     <string-array name="gender">
-        <item>Laki-Laki</item>
-        <item>Perempuan</item>
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
