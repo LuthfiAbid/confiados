@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.abid.confiados.Preferences
+import com.abid.confiados.data.Preferences
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide

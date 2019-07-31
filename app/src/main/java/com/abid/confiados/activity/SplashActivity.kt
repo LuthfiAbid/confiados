@@ -1,9 +1,10 @@
-package com.abid.confiados
+package com.abid.confiados.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import com.abid.confiados.R
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT: Long = 3000

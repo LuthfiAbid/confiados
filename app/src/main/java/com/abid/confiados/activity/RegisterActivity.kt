@@ -1,4 +1,4 @@
-package com.abid.confiados
+package com.abid.confiados.activity
 
 import android.Manifest
 import android.app.Activity
@@ -15,6 +15,8 @@ import android.util.Log
 import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.Toast
+import com.abid.confiados.data.Preferences
+import com.abid.confiados.R
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference

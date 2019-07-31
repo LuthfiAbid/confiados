@@ -1,4 +1,4 @@
-package com.abid.confiados
+package com.abid.confiados.data
 
 import android.content.Context
 import android.content.SharedPreferences
