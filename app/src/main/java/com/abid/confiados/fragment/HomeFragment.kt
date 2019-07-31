@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
     private lateinit var fAuth: FirebaseAuth
     private var destinationAdapter: DestinationAdapter? = null
     private var recyclerView: RecyclerView? = null
-    private var list: MutableList<DestinationModel> = ArrayList<DestinationModel>()
+    private var list: MutableList<DestinationModel> = ArrayList()
     lateinit var dbRef: DatabaseReference
     lateinit var pref: Preferences
 
