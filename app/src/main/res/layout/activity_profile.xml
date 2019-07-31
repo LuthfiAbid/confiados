@@ -18,6 +18,16 @@
             app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.0"
             android:id="@+id/linearLayout" android:orientation="horizontal">
 
+        <android.support.v7.widget.Toolbar
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:title="PROFILE"
+                app:titleTextColor="@android:color/white"
+                android:background="#033970?attr/colorPrimary"
+                android:theme="?attr/actionBarTheme"
+                android:minHeight="?attr/actionBarSize"
+                android:id="@+id/toolbar"
+                android:layout_weight="1"/>
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView

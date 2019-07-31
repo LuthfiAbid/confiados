@@ -15,7 +15,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".UploadActivity">
         </activity>
-        <activity android:name=".ProfileActivity">
+        <activity android:name=".ProfileActivity" android:parentActivityName=".MainActivity">
         </activity>
         <activity android:name=".RegisterActivity">
         </activity>
