@@ -193,6 +193,8 @@ ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:16:9-17:20
 		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:16:19-49
 activity#com.abid.confiados.ProfileActivity
 ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:18:9-19:20
+	android:parentActivityName
+		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:18:51-93
 	android:name
 		ADDED from D:\Confiados\app\src\main\AndroidManifest.xml:18:19-50
 activity#com.abid.confiados.RegisterActivity

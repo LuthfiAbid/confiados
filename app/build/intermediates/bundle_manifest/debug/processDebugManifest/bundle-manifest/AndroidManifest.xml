@@ -31,7 +31,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         <activity android:name="com.abid.confiados.UploadActivity" >
         </activity>
-        <activity android:name="com.abid.confiados.ProfileActivity" >
+        <activity
+            android:name="com.abid.confiados.ProfileActivity"
+            android:parentActivityName="com.abid.confiados.MainActivity" >
         </activity>
         <activity android:name="com.abid.confiados.RegisterActivity" >
         </activity>
