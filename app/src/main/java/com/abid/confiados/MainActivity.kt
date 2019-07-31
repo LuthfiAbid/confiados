@@ -63,40 +63,7 @@ class MainActivity : AppCompatActivity() {
                     Glide.with(this@MainActivity).load(p0.value.toString())
                         .centerCrop()
                         .error(R.drawable.ic_launcher_background)
-                        .into(profilePic)
-                }
-
-                override fun onCancelled(p0: DatabaseError) {
-
-                }
-            })
-        FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
-            .child("nama").addListenerForSingleValueEvent(object : ValueEventListener {
-
-                override fun onDataChange(p0: DataSnapshot) {
-                    profileName.text = p0.value.toString()
-                }
-
-                override fun onCancelled(p0: DatabaseError) {
-
-                }
-            })
-        FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
-            .child("phone").addListenerForSingleValueEvent(object : ValueEventListener {
-
-                override fun onDataChange(p0: DataSnapshot) {
-                    noTelepon.text = p0.value.toString()
-                }
-
-                override fun onCancelled(p0: DatabaseError) {
-
-                }
-            })
-        FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
-            .child("gender").addListenerForSingleValueEvent(object : ValueEventListener {
-
-                override fun onDataChange(p0: DataSnapshot) {
-                    profileGender.text = p0.value.toString()
+                        .into(profileMain)
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
@@ -108,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, UploadActivity::class.java))
         }
 
-        circleImageView.setOnClickListener {
+        profileMain.setOnClickListener {
             startActivity(Intent(this,ProfileActivity::class.java))
         }
     }
