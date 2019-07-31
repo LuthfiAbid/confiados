@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
+import com.abid.confiados.adapter.DestinationAdapter
 import com.abid.confiados.adapter.DestinationProfileAdapter
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
@@ -20,7 +21,8 @@ class ProfileActivity : AppCompatActivity() {
     private var destinationProfileAdapter: DestinationProfileAdapter? = null
     private lateinit var fAuth: FirebaseAuth
     private var recyclerView: RecyclerView? = null
-    private var list: MutableList<DestinationModel> = ArrayList<DestinationModel>()
+    private var list: MutableList<DestinationModel> = ArrayList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,10 +88,11 @@ class ProfileActivity : AppCompatActivity() {
         recyclerView!!.setHasFixedSize(true)
 
         fAuth = FirebaseAuth.getInstance()
+        val uid = pref.getUID()
 
         dbRef = FirebaseDatabase.getInstance()
             .reference.child("destination")
-        dbRef.orderByChild("iduser").equalTo(fAuth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
+        dbRef.orderByChild("iduser").equalTo(fAuth.uid).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 list = ArrayList()
                 for (dataSnapshot in p0.children) {
@@ -98,7 +101,7 @@ class ProfileActivity : AppCompatActivity() {
                     )
                     addDataAll!!.setKey(dataSnapshot.key!!)
                     list.add(addDataAll)
-                    destinationProfileAdapter = DestinationProfileAdapter(application, list)
+                    destinationProfileAdapter = DestinationProfileAdapter(this@ProfileActivity, list)
                     recyclerView!!.adapter = destinationProfileAdapter
                 }
             }

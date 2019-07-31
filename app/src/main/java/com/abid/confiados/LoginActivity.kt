@@ -51,10 +51,10 @@ class LoginActivity : AppCompatActivity() {
             finish()
         } else {
 //            startActivity(
-////                Intent(
-////                    this, MainActivity::class.java
-////                )
-////            )
+//                Intent(
+//                    this, MainActivity::class.java
+//                )
+//            )
         }
         tv_register.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
@@ -109,7 +109,6 @@ class LoginActivity : AppCompatActivity() {
 
         btn_login_google.setOnClickListener {
             pref.setStatusGoogle(true)
-            pref.setStatus(true)
             signIn()
         }
     }
@@ -119,58 +118,38 @@ class LoginActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
-    fun firebaseAuthWithGoogle(account: GoogleSignInAccount) {
-        val credential = GoogleAuthProvider.getCredential(
-            account.idToken, null
-        )
-        fAuth.signInWithCredential(credential)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    val user = fAuth.currentUser
-                    updateUI(user)
-                } else {
-                    Log.e("TAG_ERROR", "${it.exception}")
-                }
+    fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
+        fAuth.signInWithCredential(credential).addOnCompleteListener {
+            if (it.isSuccessful) {
+                val user = fAuth.currentUser
+                updateUI(user)
+            } else {
+                Log.e("TAG_ERROR", "${it.exception}")
             }
+        }
     }
 
-    private fun updateUI(user: FirebaseUser?) {
+    fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            pref.saveUID(user.uid)
-            startActivity(
-                Intent(
-                    this, MainActivity::class.java
-                )
-            )
-            Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-            finish()
+            pref.saveUID(user.uid) //save uid sharedpreferences
+            startActivity(Intent(this, MainActivity::class.java))
         } else {
-            Log.e("TAG_ERROR", "User Not Found")
+            Log.e("TAG_ERROR", "user tidak ada")
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn
-                .getSignedInAccountFromIntent(
-                    data
-                )
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+//            Toast.makeText(this,"${task}",Toast.LENGTH_SHORT).show()
             try {
-                val akun = task
-                    .getResult(ApiException::class.java)
-                firebaseAuthWithGoogle(akun!!)
+                val account = task.getResult(ApiException::class.java)
+                firebaseAuthWithGoogle(account!!)
             } catch (x: ApiException) {
                 x.printStackTrace()
             }
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        val user = fAuth.currentUser
-        if (user != null) {
-            updateUI(user)
         }
     }
 }

@@ -114,14 +114,12 @@ class UploadActivity : AppCompatActivity() {
 
     private fun addToFirebase(destination: String, startDate: String, endDate: String) {
         val nameXXX = UUID.randomUUID().toString()
-        val uid = pref.getUID()
-
+        val uid = fAuth.currentUser?.uid
         val storageRef: StorageReference = storageReference
             .child("images/$uid/$nameXXX.${GetFileExtension(filePathImage)}")
         storageRef.putFile(filePathImage).addOnSuccessListener {
             storageRef.downloadUrl.addOnSuccessListener {
                 dbRef = FirebaseDatabase.getInstance().getReference("destination/$counter")
-                dbRef.child("iduser").setValue(uid)
                 dbRef.child("bukti").setValue(it.toString())
                 dbRef.child("destination").setValue(destination)
                 dbRef.child("startDate").setValue(startDate)
@@ -132,6 +130,19 @@ class UploadActivity : AppCompatActivity() {
                         object : ValueEventListener {
                             override fun onDataChange(p0: DataSnapshot) {
                                 dbRef.child("name").setValue(p0.value)
+                            }
+
+                            override fun onCancelled(p0: DatabaseError) {
+                                Log.e("Error", p0.message)
+                            }
+
+                        })
+                FirebaseDatabase.getInstance().getReference("dataUser/")
+                    .child("${fAuth.uid}/id")
+                    .addListenerForSingleValueEvent(
+                        object : ValueEventListener {
+                            override fun onDataChange(p0: DataSnapshot) {
+                                dbRef.child("iduser").setValue(p0.value)
                             }
 
                             override fun onCancelled(p0: DatabaseError) {

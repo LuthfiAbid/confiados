@@ -17,8 +17,6 @@ import com.google.firebase.database.DatabaseReference
 class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter.DestinationViewHolder> {
     lateinit var mCtx: Context
     lateinit var itemDestination: List<DestinationModel>
-    lateinit var pref: Preferences
-    lateinit var dbRef: DatabaseReference
 
     constructor()
     constructor(mCtx: Context, list: List<DestinationModel>) {
@@ -51,7 +49,7 @@ class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter
     }
 
     inner class DestinationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var ll: LinearLayout
+        var llProfile: LinearLayout
         var imageProfile: ImageView
         var tv_name: TextView
         var tv_gender: TextView
@@ -60,7 +58,7 @@ class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter
         var tv_endDate: TextView
 
         init {
-            ll = itemView.findViewById(R.id.ll)
+            llProfile = itemView.findViewById(R.id.llProfile)
             imageProfile = itemView.findViewById(R.id.profilePicTraveller)
             tv_name = itemView.findViewById(R.id.nameProfileTraveller)
             tv_gender = itemView.findViewById(R.id.genderProfileTraveller)
