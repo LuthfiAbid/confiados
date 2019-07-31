@@ -30,6 +30,7 @@ class ProfileActivity : AppCompatActivity() {
         fAuth = FirebaseAuth.getInstance()
         pref = Preferences(this)
         setSupportActionBar(toolbar)
+        supportActionBar!!.title = "PROFILE"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
