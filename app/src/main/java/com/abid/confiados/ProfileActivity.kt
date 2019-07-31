@@ -15,7 +15,7 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
         fAuth = FirebaseAuth.getInstance()
         pref = Preferences(this)
-        logout.setOnClickListener {
+        btn_logout.setOnClickListener {
             pref.setStatus(false)
             fAuth.signOut()
             startActivity(
