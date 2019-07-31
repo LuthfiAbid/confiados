@@ -3,18 +3,24 @@ package com.abid.confiados
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.util.Log
+import com.abid.confiados.adapter.DestinationProfileAdapter
+import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_profile.*
+import java.util.ArrayList
 
 class ProfileActivity : AppCompatActivity() {
+    lateinit var dbRef: DatabaseReference
     lateinit var pref: Preferences
+    private var destinationProfileAdapter: DestinationProfileAdapter? = null
     private lateinit var fAuth: FirebaseAuth
+    private var recyclerView: RecyclerView? = null
+    private var list: MutableList<DestinationModel> = ArrayList<DestinationModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +41,7 @@ class ProfileActivity : AppCompatActivity() {
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
                 }
             })
 
@@ -72,6 +78,37 @@ class ProfileActivity : AppCompatActivity() {
 
                 }
             })
+
+        pref = Preferences(this)
+        var linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView = findViewById(R.id.recyclerViewProfileDestination)
+        recyclerView!!.layoutManager = linearLayoutManager
+        recyclerView!!.setHasFixedSize(true)
+
+        fAuth = FirebaseAuth.getInstance()
+
+        dbRef = FirebaseDatabase.getInstance()
+            .reference.child("destination")
+        dbRef.orderByChild("iduser").equalTo(fAuth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                list = ArrayList()
+                for (dataSnapshot in p0.children) {
+                    val addDataAll = dataSnapshot.getValue(
+                        DestinationModel::class.java
+                    )
+                    addDataAll!!.setKey(dataSnapshot.key!!)
+                    list.add(addDataAll)
+                    destinationProfileAdapter = DestinationProfileAdapter(application, list)
+                    recyclerView!!.adapter = destinationProfileAdapter
+                }
+            }
+
+            override fun onCancelled(p0: DatabaseError) {
+                Log.e(
+                    "TAG_ERROR", p0.message
+                )
+            }
+        })
 
         btn_logout.setOnClickListener {
             pref.setStatus(false)

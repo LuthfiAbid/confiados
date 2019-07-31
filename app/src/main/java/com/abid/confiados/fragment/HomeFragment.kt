@@ -20,7 +20,7 @@ import java.util.*
 class HomeFragment : Fragment() {
 
     private lateinit var fAuth: FirebaseAuth
-    private var bukuAdapter: DestinationAdapter? = null
+    private var destinationAdapter: DestinationAdapter? = null
     private var recyclerView: RecyclerView? = null
     private var list: MutableList<DestinationModel> = ArrayList<DestinationModel>()
     lateinit var dbRef: DatabaseReference
@@ -64,8 +64,8 @@ class HomeFragment : Fragment() {
                     )
                     addDataAll!!.setKey(dataSnapshot.key!!)
                     list.add(addDataAll)
-                    bukuAdapter = DestinationAdapter(context!!, list)
-                    recyclerView!!.adapter = bukuAdapter
+                    destinationAdapter = DestinationAdapter(context!!, list)
+                    recyclerView!!.adapter = destinationAdapter
                 }
             }
 
