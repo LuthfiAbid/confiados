@@ -10,7 +10,7 @@ class Confiados : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.confiados)
-        setSupportActionBar(toolbasConf)
+        setSupportActionBar(toolbarConf)
         supportActionBar!!.title = "CONFIADOS"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
