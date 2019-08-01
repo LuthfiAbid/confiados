@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.abid.confiados.Preferences
+import com.abid.confiados.data.Preferences
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
@@ -48,11 +48,6 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
         p0.tv_destination.text = destinationModel.getDestination()
         p0.tv_startDate.text = destinationModel.getStartDate()
         p0.tv_endDate.text = destinationModel.getEndDate()
-        p0.ll.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-
-            }
-        })
     }
 
     inner class DestinationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

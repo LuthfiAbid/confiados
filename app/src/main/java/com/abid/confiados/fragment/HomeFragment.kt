@@ -9,22 +9,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.abid.confiados.Preferences
+import com.abid.confiados.data.Preferences
 import com.abid.confiados.R
 import com.abid.confiados.adapter.DestinationAdapter
 import com.abid.confiados.model.DestinationModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class HomeFragment : Fragment() {
 
-    private val dest = "DESTINATION"
     private lateinit var fAuth: FirebaseAuth
-    private var bukuAdapter: DestinationAdapter? = null
+    private var destinationAdapter: DestinationAdapter? = null
     private var recyclerView: RecyclerView? = null
-    private var list: MutableList<DestinationModel> = ArrayList<DestinationModel>()
+    private var list: MutableList<DestinationModel> = ArrayList()
     lateinit var dbRef: DatabaseReference
     lateinit var pref: Preferences
 
@@ -47,16 +45,16 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        title.text = dest
+        pref = Preferences(context!!)
+        var linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recyclerView = view.findViewById(R.id.recyclerViewDestination)
-        recyclerView!!.layoutManager = LinearLayoutManager(context)
+        recyclerView!!.layoutManager = linearLayoutManager
         recyclerView!!.setHasFixedSize(true)
 
-        pref = Preferences(context!!)
         fAuth = FirebaseAuth.getInstance()
 
         dbRef = FirebaseDatabase.getInstance()
-            .getReference("destination/${pref.getUID()}")
+            .getReference("destination")
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 list = ArrayList()
@@ -66,8 +64,8 @@ class HomeFragment : Fragment() {
                     )
                     addDataAll!!.setKey(dataSnapshot.key!!)
                     list.add(addDataAll)
-                    bukuAdapter = DestinationAdapter(context!!, list)
-                    recyclerView!!.adapter = bukuAdapter
+                    destinationAdapter = DestinationAdapter(context!!, list)
+                    recyclerView!!.adapter = destinationAdapter
                 }
             }
 
@@ -76,7 +74,6 @@ class HomeFragment : Fragment() {
                     "TAG_ERROR", p0.message
                 )
             }
-
         })
     }
 }

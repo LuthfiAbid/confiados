@@ -5,13 +5,13 @@
             android:id="@+id/navigation_home"
             android:icon="@android:drawable/ic_menu_myplaces"
             android:title="Home"/>
-
-    <item
-            android:id="@+id/navigation_upload"
-            android:icon="@android:drawable/ic_menu_upload"
-            android:title="Upload"/>
     <item
             android:id="@+id/navigation_cart"
             android:icon="@android:drawable/ic_menu_view"
             android:title="Cart"/>
+    <!--<item-->
+    <!--android:id="@+id/navigation_chat"-->
+    <!--android:icon="@android:drawable/ic_menu_send"-->
+    <!--android:title="Chat"/>-->
+
 </menu>

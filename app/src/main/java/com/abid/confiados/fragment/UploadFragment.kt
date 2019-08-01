@@ -13,29 +13,26 @@ import android.provider.MediaStore
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.util.Log
+import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.Toast
-import com.abid.confiados.Preferences
-
+import com.abid.confiados.data.Preferences
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_upload.*
 import java.io.IOException
 import java.util.*
 
 class UploadFragment : Fragment() {
 
-    private val upload = "UPLOAD"
     lateinit var pref: Preferences
     var value = 0.0
     val REQUEST_CODE_IMAGE = 10002
@@ -68,13 +65,12 @@ class UploadFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        title.text = upload
         destinationModel = DestinationModel()
         fAuth = FirebaseAuth.getInstance()
         pref = Preferences(context!!)
         firebaseStorage = FirebaseStorage.getInstance()
         storageReference = firebaseStorage.reference
-
+        tv_name.text = pref.getNama()
         imagePHolder.setOnClickListener {
             when {
                 (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) -> {
@@ -141,20 +137,46 @@ class UploadFragment : Fragment() {
     }
 
     private fun addToFirebase(destination: String, startDate: String, endDate: String) {
-        val uidUser = pref.getUID()
-
         val nameXXX = UUID.randomUUID().toString()
         val uid = pref.getUID()
+
         val storageRef: StorageReference = storageReference
             .child("images/$uid/$nameXXX.${GetFileExtension(filePathImage)}")
         storageRef.putFile(filePathImage).addOnSuccessListener {
             storageRef.downloadUrl.addOnSuccessListener {
-                dbRef = FirebaseDatabase.getInstance().getReference("destination/$uidUser/$counter")
-                dbRef.child("iduser").setValue(uidUser)
-                dbRef.child("imageuser").setValue(it.toString())
+                dbRef = FirebaseDatabase.getInstance().getReference("destination/$counter")
+                dbRef.child("iduser").setValue(uid)
+                dbRef.child("bukti").setValue(it.toString())
                 dbRef.child("destination").setValue(destination)
                 dbRef.child("startDate").setValue(startDate)
                 dbRef.child("endDate").setValue(endDate)
+                FirebaseDatabase.getInstance().getReference("dataUser/")
+                    .child("${fAuth.uid}/nama")
+                    .addListenerForSingleValueEvent(
+                        object : ValueEventListener {
+                            override fun onDataChange(p0: DataSnapshot) {
+                                dbRef.child("name").setValue(p0.value)
+                            }
+
+                            override fun onCancelled(p0: DatabaseError) {
+                                e("Error", p0.message)
+                            }
+
+                        })
+                FirebaseDatabase.getInstance().getReference("dataUser/")
+                    .child("${fAuth.uid}/gender")
+                    .addListenerForSingleValueEvent(
+                        object : ValueEventListener {
+                            override fun onDataChange(p0: DataSnapshot) {
+                                dbRef.child("gender").setValue(p0.value)
+                            }
+
+                            override fun onCancelled(p0: DatabaseError) {
+                                e("Error", p0.message)
+                            }
+
+                        })
+
             }
             Toast.makeText(
                 context,
@@ -201,7 +223,7 @@ class UploadFragment : Fragment() {
                 try {
                     val bitmap: Bitmap = MediaStore
                         .Images.Media.getBitmap(
-                        context!!.contentResolver, filePathImage
+                        activity!!.contentResolver, filePathImage
                     )
                     Glide.with(this).load(bitmap)
                         .override(250, 250)
