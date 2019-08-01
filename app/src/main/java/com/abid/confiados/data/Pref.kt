@@ -3,7 +3,7 @@ package com.abid.confiados.data
 import android.content.Context
 import android.content.SharedPreferences
 
-class Preferences {
+class Pref {
     val USER_ID = "uidx"
     val COUNTER_ID = "counter"
     val statusLogin = "STATUS"
@@ -25,10 +25,18 @@ class Preferences {
         edit.apply()
     }
 
+    fun getUIDD(): String? {
+        return sharedSet.getString(USER_ID, " ")
+    }
+    fun saveUIDD(uidd: String) {
+        val edit = sharedSet.edit()
+        edit.putString(USER_ID, uidd)
+        edit.apply()
+    }
+
     fun getUID(): String? {
         return sharedSet.getString(USER_ID, " ")
     }
-
     fun setStatusUser(statusUser: Boolean) {
         val edit = sharedSet.edit()
         edit.putBoolean(statusUserSlur, statusUser)
@@ -44,6 +52,10 @@ class Preferences {
     fun getCounterId(): Int {
         return sharedSet.getInt(COUNTER_ID, 1)
     }
+    fun getCountId(): Int {
+        return sharedSet.getInt(COUNTER_ID, 0)
+    }
+
 
     fun setEmail(email: String) {
         val editor: SharedPreferences.Editor = sharedSet.edit()

@@ -15,7 +15,7 @@ import android.util.Log
 import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.Toast
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
@@ -23,9 +23,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_upload.*
-import kotlinx.android.synthetic.main.fragment_upload.*
 import kotlinx.android.synthetic.main.fragment_upload.btnUploadDestination
 import kotlinx.android.synthetic.main.fragment_upload.endDateUpload
 import kotlinx.android.synthetic.main.fragment_upload.imagePHolder
@@ -36,7 +34,7 @@ import java.io.IOException
 import java.util.*
 
 class UploadActivity : AppCompatActivity() {
-    lateinit var pref: Preferences
+    lateinit var pref: Pref
     var value = 0.0
     val REQUEST_CODE_IMAGE = 10002
     val PERMISSION_RC = 10003
@@ -57,7 +55,7 @@ class UploadActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         destinationModel = DestinationModel()
         fAuth = FirebaseAuth.getInstance()
-        pref = Preferences(this)
+        pref = Pref(this)
         firebaseStorage = FirebaseStorage.getInstance()
         storageReference = firebaseStorage.reference
 
@@ -128,12 +126,14 @@ class UploadActivity : AppCompatActivity() {
 
     private fun addToFirebase(destination: String, startDate: String, endDate: String) {
         val nameXXX = UUID.randomUUID().toString()
+        val iddest = UUID.randomUUID().toString()
+        pref.saveUID(iddest)
         val uid = fAuth.currentUser?.uid
         val storageRef: StorageReference = storageReference
             .child("images/$uid/$nameXXX.${GetFileExtension(filePathImage)}")
         storageRef.putFile(filePathImage).addOnSuccessListener {
             storageRef.downloadUrl.addOnSuccessListener {
-                dbRef = FirebaseDatabase.getInstance().getReference("destination/$counter")
+                dbRef = FirebaseDatabase.getInstance().getReference("destination/$iddest")
                 dbRef.child("bukti").setValue(it.toString())
                 dbRef.child("destination").setValue(destination)
                 dbRef.child("startDate").setValue(startDate)

@@ -1115,6 +1115,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bt_editProf
 id btnUploadDestination
 id btn_confiados
 id btn_login
@@ -1191,7 +1192,7 @@ id ifRoom
 id image
 id imagePHolder
 id imageProfileHolder
-id img_placeholder
+id img_placeholder_EditProfile
 id info
 id invisible
 id italic
@@ -1251,6 +1252,7 @@ id radio
 id recyclerViewConfiados
 id recyclerViewDestination
 id recyclerViewProfileDestination
+id refresh
 id right
 id right_icon
 id right_side
@@ -1297,6 +1299,7 @@ id start
 id startDateUpload
 id startTravelingDate
 id startTravelingDateProfile
+id statusTraveller
 id status_bar_latest_event_content
 id stretch
 id submenuarrow

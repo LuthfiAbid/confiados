@@ -9,7 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.adapter.DestinationAdapter
 import com.abid.confiados.model.DestinationModel
@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
     private var recyclerView: RecyclerView? = null
     private var list: MutableList<DestinationModel> = ArrayList()
     lateinit var dbRef: DatabaseReference
-    lateinit var pref: Preferences
+    lateinit var pref: Pref
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        pref = Preferences(context!!)
+        pref = Pref(context!!)
         var linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recyclerView = view.findViewById(R.id.recyclerViewDestination)
         recyclerView!!.layoutManager = linearLayoutManager

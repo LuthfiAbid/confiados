@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference
 class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationViewHolder> {
     lateinit var mCtx: Context
     lateinit var itemDestination: List<DestinationModel>
-    lateinit var pref: Preferences
+    lateinit var pref: Pref
     lateinit var dbRef: DatabaseReference
 
     constructor()
