@@ -1071,6 +1071,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable plus
 drawable shape_et
 drawable shape_upload
 drawable tooltip_frame_dark
@@ -1102,6 +1103,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addConfiados
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1114,9 +1116,11 @@ id beginning
 id blocking
 id bottom
 id btnUploadDestination
+id btn_confiados
 id btn_login
 id btn_login_google
 id btn_logout
+id btn_save
 id buttonPanel
 id cancel_action
 id ccc
@@ -1127,7 +1131,6 @@ id chains
 id chatPerson
 id checkbox
 id chronometer
-id circleImageView
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1155,6 +1158,8 @@ id endDateUpload
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id et_editnama
+id et_editnohp
 id et_email
 id et_name
 id et_password
@@ -1186,6 +1191,7 @@ id ifRoom
 id image
 id imagePHolder
 id imageProfileHolder
+id img_placeholder
 id info
 id invisible
 id italic
@@ -1197,6 +1203,7 @@ id light
 id line1
 id line3
 id linearLayout
+id linearLayout2
 id listMode
 id list_item
 id ll
@@ -1241,6 +1248,7 @@ id progressReg
 id progress_circular
 id progress_horizontal
 id radio
+id recyclerViewConfiados
 id recyclerViewDestination
 id recyclerViewProfileDestination
 id right
@@ -1314,6 +1322,10 @@ id title
 id titleDividerNoCustom
 id title_template
 id toolbar
+id toolbarConf
+id toolbarEdit
+id toolbarUpload
+id toolbasConf
 id top
 id topPanel
 id touch_outside
@@ -1391,6 +1403,7 @@ layout activity_profile
 layout activity_register
 layout activity_splash
 layout activity_upload
+layout confiados
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1405,6 +1418,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout edit_profile
 layout fragment_cart
 layout fragment_home
 layout fragment_upload

@@ -123,6 +123,14 @@ class ProfileActivity : AppCompatActivity() {
             )
         }
 
+        bt_editProf.setOnClickListener {
+            startActivity(
+                Intent(
+                    this, EditProfile::class.java
+                )
+            )
+        }
+
         btn_logout.setOnClickListener {
             pref.setStatus(false)
             fAuth.signOut()
