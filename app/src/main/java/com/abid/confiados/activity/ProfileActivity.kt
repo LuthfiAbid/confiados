@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.adapter.DestinationProfileAdapter
 import com.abid.confiados.model.DestinationModel
@@ -18,7 +18,7 @@ import java.util.ArrayList
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var dbRef: DatabaseReference
-    lateinit var pref: Preferences
+    lateinit var pref: Pref
     private var destinationProfileAdapter: DestinationProfileAdapter? = null
     private lateinit var fAuth: FirebaseAuth
     private var recyclerView: RecyclerView? = null
@@ -29,10 +29,15 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         fAuth = FirebaseAuth.getInstance()
-        pref = Preferences(this)
+        pref = Pref(this)
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "PROFILE"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        refresh.setOnClickListener {
+            finish()
+            startActivity(intent)
+        }
 
         FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
             .child("profile").addListenerForSingleValueEvent(object : ValueEventListener {
@@ -83,14 +88,12 @@ class ProfileActivity : AppCompatActivity() {
                 }
             })
 
-        pref = Preferences(this)
         var linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView = findViewById(R.id.recyclerViewProfileDestination)
         recyclerView!!.layoutManager = linearLayoutManager
         recyclerView!!.setHasFixedSize(true)
 
         fAuth = FirebaseAuth.getInstance()
-        val uid = pref.getUID()
 
         dbRef = FirebaseDatabase.getInstance()
             .reference.child("destination")

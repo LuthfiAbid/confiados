@@ -15,7 +15,7 @@ import android.util.Log
 import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.Toast
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -33,7 +33,7 @@ class RegisterActivity : AppCompatActivity() {
     val PERMISSION_RC = 10003
     lateinit var fAuth: FirebaseAuth
     lateinit var dbRef: DatabaseReference
-    lateinit var helperPref: Preferences
+    lateinit var helperPref: Pref
     lateinit var storageReference: StorageReference
     lateinit var firebaseStorage: FirebaseStorage
     lateinit var filePathImage: Uri
@@ -43,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         fAuth = FirebaseAuth.getInstance()
-        helperPref = Preferences(this)
+        helperPref = Pref(this)
         firebaseStorage = FirebaseStorage.getInstance()
         storageReference = firebaseStorage.reference
         tv_login.setOnClickListener {
