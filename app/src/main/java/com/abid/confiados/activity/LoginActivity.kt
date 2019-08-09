@@ -4,14 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.util.Log.d
+import android.util.Log.e
 import android.widget.Toast
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -23,16 +26,19 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
-    private val RC_SIGN_IN = 7
-    private lateinit var mGoogleSignIn: GoogleSignInClient
+    val RC_SIGN_IN: Int = 1
+    lateinit var mGoogleSignInClient: GoogleSignInClient
+    lateinit var mGoogleSignInOptions: GoogleSignInOptions
     private lateinit var fAuth: FirebaseAuth
-    private lateinit var pref: Preferences
+    private lateinit var pref: Pref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        configureGoogleSignIn()
+        setupUI()
+        pref = Pref(this)
         fAuth = FirebaseAuth.getInstance()
-        pref = Preferences(this)
         if (!pref.cekStatus()!!) {
 
         } else {
@@ -52,11 +58,6 @@ class LoginActivity : AppCompatActivity() {
             )
             finish()
         } else {
-//            startActivity(
-//                Intent(
-//                    this, MainActivity::class.java
-//                )
-//            )
         }
         tv_register.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
@@ -75,6 +76,7 @@ class LoginActivity : AppCompatActivity() {
                                 override fun onCancelled(p0: DatabaseError) {
 
                                 }
+
                                 override fun onDataChange(p0: DataSnapshot) {
                                     val user = fAuth.currentUser
                                     updateUI(user)
@@ -85,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
                     .addOnFailureListener {
                         Toast.makeText(
                             this,
-                            "LOGIN GAGAL Lur",
+                            "Username atau Password salah!",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -97,37 +99,53 @@ class LoginActivity : AppCompatActivity() {
                 ).show()
             }
         }
-        val googleSignInOptions = GoogleSignInOptions.Builder(
-            GoogleSignInOptions.DEFAULT_SIGN_IN
-        ).requestIdToken(
-            getString(
-                R.string.default_web_client_id
-            )
-        ).requestEmail().build()
-
-        mGoogleSignIn = GoogleSignIn.getClient(
-            this, googleSignInOptions
-        )
-
+    }
+    private fun configureGoogleSignIn() {
+        mGoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+        mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
+    }
+    private fun setupUI() {
         btn_login_google.setOnClickListener {
-            pref.setStatusGoogle(true)
             signIn()
         }
     }
-
     private fun signIn() {
-        val signInIntent = mGoogleSignIn.signInIntent
+        val signInIntent: Intent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
-
-    fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == RC_SIGN_IN) {
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                firebaseAuthWithGoogle(account!!)
+            } catch (e: ApiException) {
+                e("tolll", e.message)
+                Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+    override fun onStart() {
+        super.onStart()
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            updateUI(user)
+            finish()
+        }
+    }
+    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         fAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
                 val user = fAuth.currentUser
                 updateUI(user)
             } else {
-                Log.e("TAG_ERROR", "${it.exception}")
+                d("error", it.exception!!.message)
+                Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -138,20 +156,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         } else {
             Log.e("TAG_ERROR", "user tidak ada")
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-//            Toast.makeText(this,"${task}",Toast.LENGTH_SHORT).show()
-            try {
-                val account = task.getResult(ApiException::class.java)
-                firebaseAuthWithGoogle(account!!)
-            } catch (x: ApiException) {
-                x.printStackTrace()
-            }
         }
     }
 }

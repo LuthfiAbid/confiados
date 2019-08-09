@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.widget.FrameLayout
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.fragment.CartFragment
 import com.abid.confiados.fragment.HomeFragment
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fAuth: FirebaseAuth
     private var recyclerView: RecyclerView? = null
     lateinit var dbRef: DatabaseReference
-    lateinit var pref: Preferences
+    lateinit var pref: Pref
     private var content: FrameLayout? = null
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        pref = Preferences(this)
+        pref = Pref(this)
         fAuth = FirebaseAuth.getInstance()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         val fragment = HomeFragment.newInstance()

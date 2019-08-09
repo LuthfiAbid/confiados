@@ -19,7 +19,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.MimeTypeMap
 import android.widget.Toast
-import com.abid.confiados.data.Preferences
+import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.bumptech.glide.Glide
@@ -33,7 +33,7 @@ import java.util.*
 
 class UploadFragment : Fragment() {
 
-    lateinit var pref: Preferences
+    lateinit var pref: Pref
     var value = 0.0
     val REQUEST_CODE_IMAGE = 10002
     val PERMISSION_RC = 10003
@@ -67,7 +67,7 @@ class UploadFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         destinationModel = DestinationModel()
         fAuth = FirebaseAuth.getInstance()
-        pref = Preferences(context!!)
+        pref = Pref(context!!)
         firebaseStorage = FirebaseStorage.getInstance()
         storageReference = firebaseStorage.reference
         tv_name.text = pref.getNama()

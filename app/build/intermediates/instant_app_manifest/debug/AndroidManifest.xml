@@ -30,24 +30,32 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        <activity android:name="com.abid.confiados.UploadActivity" >
+        <activity
+            android:name="com.abid.confiados.activity.Confiados"
+            android:parentActivityName="com.abid.confiados.activity.ProfileActivity" >
         </activity>
         <activity
-            android:name="com.abid.confiados.ProfileActivity"
-            android:parentActivityName="com.abid.confiados.MainActivity" >
+            android:name="com.abid.confiados.activity.UploadActivity"
+            android:parentActivityName="com.abid.confiados.activity.MainActivity" >
         </activity>
-        <activity android:name="com.abid.confiados.RegisterActivity" >
+        <activity
+            android:name="com.abid.confiados.activity.ProfileActivity"
+            android:parentActivityName="com.abid.confiados.activity.MainActivity" >
         </activity>
-        <activity android:name="com.abid.confiados.SplashActivity" >
+        <activity android:name="com.abid.confiados.activity.RegisterActivity" >
+        </activity>
+        <activity android:name="com.abid.confiados.activity.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.abid.confiados.LoginActivity" />
-        <activity android:name="com.abid.confiados.MainActivity" >
-        </activity>
+        <activity android:name="com.abid.confiados.activity.LoginActivity" />
+        <activity android:name="com.abid.confiados.activity.MainActivity" />
+        <activity
+            android:name="com.abid.confiados.activity.EditProfile"
+            android:parentActivityName="com.abid.confiados.activity.ProfileActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
