@@ -30,6 +30,18 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity android:name="com.abid.confiados.activity.ChatLogActivity" >
+        </activity>
+        <activity android:name="com.abid.confiados.activity.NewMessagesActivity" >
+        </activity>
+        <activity android:name="com.abid.confiados.activity.LatesMessagesActivity" >
+        </activity>
+        <activity android:name="com.abid.confiados.activity.ChatDetailsActivity" >
+        </activity>
+        <activity android:name="com.abid.confiados.activity.SelectFriendActivity" >
+        </activity>
+        <activity android:name="com.abid.confiados.activity.ChatActivity" >
+        </activity>
         <activity
             android:name="com.abid.confiados.activity.Confiados"
             android:parentActivityName="com.abid.confiados.activity.ProfileActivity" >

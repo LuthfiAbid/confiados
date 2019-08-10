@@ -48,11 +48,13 @@ class EditProfile : AppCompatActivity() {
             REQUEST_CODE_IMAGE
         )
     }
+
     fun GetFileExtension(uri: Uri): String? {
         val contentResolver = this.contentResolver
         val mimeTypeMap = MimeTypeMap.getSingleton()
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri))
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode != Activity.RESULT_OK) {
@@ -75,6 +77,7 @@ class EditProfile : AppCompatActivity() {
             }
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.edit_profile)
@@ -117,6 +120,7 @@ class EditProfile : AppCompatActivity() {
                         .error(R.drawable.ic_launcher_background)
                         .into(img_placeholder_EditProfile)
                 }
+
                 override fun onCancelled(p0: DatabaseError) {
                 }
             })
@@ -125,6 +129,7 @@ class EditProfile : AppCompatActivity() {
                 override fun onDataChange(p0: DataSnapshot) {
                     et_editnama.setText(p0.value.toString())
                 }
+
                 override fun onCancelled(p0: DatabaseError) {
                 }
             })
@@ -133,43 +138,46 @@ class EditProfile : AppCompatActivity() {
                 override fun onDataChange(p0: DataSnapshot) {
                     et_editnohp.setText(p0.value.toString())
                 }
+
                 override fun onCancelled(p0: DatabaseError) {
                 }
             })
         btn_save.setOnClickListener {
             val uidUser = fAuth.currentUser?.uid
-            val counter = preferences.getUIDD()
             dbRef = FirebaseDatabase.getInstance().reference
-            dbRef.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError) {
-                    Log.e("Error", p0.message)
-                }
-
-                override fun onDataChange(p0: DataSnapshot) {
-                    for (data in p0.children) {
-                        val eteditnamao = et_editnama.text.toString()
-                        val eto = et_editnohp.text.toString()
-                        val storageRef: StorageReference = storageReference
-                            .child("profile/$uidUser/${preferences.getUIDD()}.${GetFileExtension(filePathImage)}")
-                        storageRef.putFile(filePathImage).addOnSuccessListener {
-                            storageRef.downloadUrl.addOnSuccessListener {
-                                dbRef.child("dataUser/$uidUser/profile").setValue(it.toString())
-                                dbRef.child("dataUser/$uidUser/nama").setValue(eteditnamao)
-                                dbRef.child("dataUser/$uidUser/phone").setValue(eto)
-                                dbRef.child("destination/$counter/name").setValue(eteditnamao)
-                                dbRef.child("destination/$counter/image").setValue(it.toString())
-                            }
-                        }.addOnFailureListener {
-                            Log.e("TAG_ERROR", it.message)
-                        }.addOnProgressListener { taskSnapshot ->
-                            value = (100.0 * taskSnapshot
-                                .bytesTransferred / taskSnapshot.totalByteCount)
-                        }
+//            dbRef.addListenerForSingleValueEvent(object : ValueEventListener {
+//                override fun onCancelled(p0: DatabaseError) {
+//                    Log.e("Error", p0.message)
+//                }
+//
+//                override fun onDataChange(p0: DataSnapshot) {
+//                    for (data in p0.children) {
+            val eteditnamao = et_editnama.text.toString()
+            val eto = et_editnohp.text.toString()
+            try {
+                val storageRef: StorageReference = storageReference
+                    .child("profile/$uidUser/${preferences.getUIDD()}.${GetFileExtension(filePathImage)}")
+                storageRef.putFile(filePathImage).addOnSuccessListener {
+                    storageRef.downloadUrl.addOnSuccessListener {
+                        dbRef.child("dataUser/$uidUser/profile").setValue(it.toString())
                     }
+                }.addOnFailureListener {
+                    Log.e("TAG_ERROR", it.message)
+                }.addOnProgressListener { taskSnapshot ->
+                    value = (100.0 * taskSnapshot
+                        .bytesTransferred / taskSnapshot.totalByteCount)
                 }
-            })
-            Toast.makeText(this,"Edit sukses!",Toast.LENGTH_SHORT).show()
-
+            } catch (e: UninitializedPropertyAccessException) {
+                Toast.makeText(this, "Sukses", Toast.LENGTH_SHORT).show()
+            }
+            dbRef.child("dataUser/$uidUser/nama").setValue(eteditnamao)
+            dbRef.child("dataUser/$uidUser/phone").setValue(eto)
+            Toast.makeText(this, "Sukses", Toast.LENGTH_SHORT).show()
         }
     }
+//            })
+//            Toast.makeText(this,"Edit sukses!",Toast.LENGTH_SHORT).show()
+//
+//        }
+//    }
 }

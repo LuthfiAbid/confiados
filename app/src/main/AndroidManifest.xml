@@ -13,9 +13,25 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activity.Confiados" android:parentActivityName=".activity.ProfileActivity">
+        <activity android:name=".activity.ChatLogActivity">
         </activity>
-        <activity android:name=".activity.UploadActivity" android:parentActivityName=".activity.MainActivity">
+        <activity android:name=".activity.NewMessagesActivity">
+        </activity>
+        <activity android:name=".activity.LatesMessagesActivity">
+        </activity>
+        <activity android:name=".activity.ChatDetailsActivity">
+        </activity>
+        <activity android:name=".activity.SelectFriendActivity">
+        </activity>
+        <activity android:name=".activity.ChatActivity">
+        </activity>
+        <activity
+                android:name=".activity.Confiados"
+                android:parentActivityName=".activity.ProfileActivity">
+        </activity>
+        <activity
+                android:name=".activity.UploadActivity"
+                android:parentActivityName=".activity.MainActivity">
         </activity>
         <activity
                 android:name=".activity.ProfileActivity"
@@ -32,7 +48,9 @@
         </activity>
         <activity android:name=".activity.LoginActivity"/>
         <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.EditProfile" android:parentActivityName=".activity.ProfileActivity"/>
+        <activity
+                android:name=".activity.EditProfile"
+                android:parentActivityName=".activity.ProfileActivity"/>
     </application>
 
 </manifest>
