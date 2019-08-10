@@ -5,10 +5,12 @@ data class DestinationModel (
     var image: String? = null,
     var name: String? = null,
     var gender: String? = null,
+    var noTelp: String? = null,
     var destination: String? = null,
     var startDate: String? = null,
     var endDate: String? = null,
     var iduser: String? = null,
+    var bukti: String? = null,
     var user: UserModel? = null
 )
 //    constructor()
