@@ -1176,6 +1176,7 @@ id btn_login_google
 id btn_logout
 id btn_save
 id btn_send
+id bukti_on_detail
 id buttonPanel
 id buttonSendMessages
 id cancel_action
@@ -1190,6 +1191,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id contact_on_detail
 id container
 id content
 id contentPanel
@@ -1206,11 +1208,12 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id destinationFilter
+id destination_on_detail
 id dimensions
 id direct
 id disableHome
 id drawer_layout
-id editText
+id editTextMessage
 id edit_query
 id end
 id endDateUpload
@@ -1239,6 +1242,7 @@ id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
+id header_detail
 id home
 id homeAsUp
 id homeTravelingDate
@@ -1286,6 +1290,7 @@ id multiply
 id name
 id nameProfileTraveller
 id nameTraveller
+id nameTraveller_on_detail
 id navigation
 id navigation_cart
 id navigation_header_container
@@ -1304,6 +1309,7 @@ id parent
 id parentPanel
 id parent_matrix
 id percent
+id photo_profile_on_detail
 id pin
 id profileGender
 id profileMain
@@ -1403,6 +1409,7 @@ id toolbar2
 id toolbarConf
 id toolbarEdit
 id toolbarUpload
+id toolbar_detail
 id toolbasConf
 id top
 id topPanel
@@ -1506,6 +1513,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout detail_destination
 layout edit_profile
 layout fragment_cart
 layout fragment_chats

@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".activity.NewMessagesActivity">
         </activity>
+        <activity android:name=".activity.DetailDestination"/>
         <activity android:name=".activity.LatesMessagesActivity">
         </activity>
         <activity android:name=".activity.ChatDetailsActivity">

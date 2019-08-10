@@ -14,6 +14,7 @@ import android.widget.Toast
 import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.activity.ChatLogActivity
+import com.abid.confiados.activity.DetailDestination
 import com.abid.confiados.fragment.HomeFragment
 import com.abid.confiados.model.DestinationModel
 import com.abid.confiados.model.UserModel
@@ -75,6 +76,20 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
             intent.putExtra("nama_user", destinationModel.user!!.nama)
             intent.putExtra("foto_profil", destinationModel.user!!.profile)
             intent.putExtra("id_user", destinationModel.iduser)
+            mCtx.startActivity(intent)
+        }
+        p0.ll.setOnClickListener {
+            Toast.makeText(mCtx, "Detail", Toast.LENGTH_SHORT).show()
+            val intent : Intent = Intent(mCtx, DetailDestination::class.java)
+            intent.putExtra("nama_user", destinationModel.user!!.nama)
+            intent.putExtra("foto_profil", destinationModel.user!!.profile)
+            intent.putExtra("gender", destinationModel.user!!.gender)
+            intent.putExtra("notelp", destinationModel.user!!.phone)
+            intent.putExtra("id_user", destinationModel.iduser)
+            intent.putExtra("destination", destinationModel.destination)
+            intent.putExtra("startDate", destinationModel.startDate)
+            intent.putExtra("endDate", destinationModel.endDate)
+            intent.putExtra("bukti", destinationModel.bukti)
             mCtx.startActivity(intent)
         }
     }
