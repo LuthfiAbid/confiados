@@ -126,8 +126,7 @@ class UploadActivity : AppCompatActivity() {
 
     private fun addToFirebase(destination: String, startDate: String, endDate: String) {
         val nameXXX = UUID.randomUUID().toString()
-        val iddest = UUID.randomUUID().toString()
-        pref.saveUID(iddest)
+        val iddest = pref.getCounterId()
         val uid = fAuth.currentUser?.uid
         val storageRef: StorageReference = storageReference
             .child("images/$uid/$nameXXX.${GetFileExtension(filePathImage)}")
@@ -139,50 +138,11 @@ class UploadActivity : AppCompatActivity() {
                 dbRef.child("startDate").setValue(startDate)
                 dbRef.child("endDate").setValue(endDate)
                 FirebaseDatabase.getInstance().getReference("dataUser/")
-                    .child("${fAuth.uid}/nama")
-                    .addListenerForSingleValueEvent(
-                        object : ValueEventListener {
-                            override fun onDataChange(p0: DataSnapshot) {
-                                dbRef.child("name").setValue(p0.value)
-                            }
-
-                            override fun onCancelled(p0: DatabaseError) {
-                                Log.e("Error", p0.message)
-                            }
-
-                        })
-                FirebaseDatabase.getInstance().getReference("dataUser/")
                     .child("${fAuth.uid}/id")
                     .addListenerForSingleValueEvent(
                         object : ValueEventListener {
                             override fun onDataChange(p0: DataSnapshot) {
                                 dbRef.child("iduser").setValue(p0.value)
-                            }
-
-                            override fun onCancelled(p0: DatabaseError) {
-                                Log.e("Error", p0.message)
-                            }
-
-                        })
-                FirebaseDatabase.getInstance().getReference("dataUser/")
-                    .child("${fAuth.uid}/profile")
-                    .addListenerForSingleValueEvent(
-                        object : ValueEventListener {
-                            override fun onDataChange(p0: DataSnapshot) {
-                                dbRef.child("image").setValue(p0.value)
-                            }
-
-                            override fun onCancelled(p0: DatabaseError) {
-                                Log.e("Error", p0.message)
-                            }
-
-                        })
-                FirebaseDatabase.getInstance().getReference("dataUser/")
-                    .child("${fAuth.uid}/gender")
-                    .addListenerForSingleValueEvent(
-                        object : ValueEventListener {
-                            override fun onDataChange(p0: DataSnapshot) {
-                                dbRef.child("gender").setValue(p0.value)
                             }
 
                             override fun onCancelled(p0: DatabaseError) {

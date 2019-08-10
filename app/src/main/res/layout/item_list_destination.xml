@@ -35,9 +35,9 @@
                 android:id="@+id/genderTraveller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
                 android:layout_width="40dp"
-                android:id="@+id/chatPerson"
+                android:id="@+id/chatPersonMessage"
                 android:layout_alignParentEnd="true"
                 android:background="#999"
                 android:src="@android:drawable/sym_action_chat"

@@ -2,6 +2,7 @@ package com.abid.confiados.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
+import com.abid.confiados.model.UserModel
 import com.bumptech.glide.Glide
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter.DestinationViewHolder> {
     lateinit var mCtx: Context
@@ -35,15 +41,29 @@ class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter
 
     override fun onBindViewHolder(p0: DestinationViewHolder, p1: Int) {
         val destinationModel: DestinationModel = itemDestination.get(p1)
-        Glide.with(mCtx).load(destinationModel.getImage())
-            .centerCrop()
-            .error(R.drawable.ic_launcher_background)
-            .into(p0.imageProfile)
-        p0.tv_name.text = destinationModel.getName()
-        p0.tv_gender.text = destinationModel.getGender()
-        p0.tv_destination.text = destinationModel.getDestination()
-        p0.tv_startDate.text = destinationModel.getStartDate()
-        p0.tv_endDate.text = destinationModel.getEndDate()
+        FirebaseDatabase.getInstance()
+            .getReference("dataUser/")
+            .child(destinationModel.iduser!!)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(data2: DataSnapshot) {
+                    val userData =
+                        data2.getValue(UserModel::class.java)
+                    destinationModel.user = userData
+                    Glide.with(mCtx).load(destinationModel.user!!.profile)
+                        .centerCrop()
+                        .error(R.drawable.ic_launcher_background)
+                        .into(p0.imageProfile)
+                    p0.tv_name.text = destinationModel.user!!.nama
+                    p0.tv_gender.text = destinationModel.user!!.gender
+                }
+
+                override fun onCancelled(p0: DatabaseError) {
+                    Log.e("cok", p0.message)
+                }
+            })
+        p0.tv_destination.text = destinationModel.destination
+        p0.tv_startDate.text = destinationModel.startDate
+        p0.tv_endDate.text = destinationModel.endDate
     }
 
     inner class DestinationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
