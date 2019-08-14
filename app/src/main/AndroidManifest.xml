@@ -14,7 +14,11 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activity.AddConfiados" android:parentActivityName=".activity.Confiados">
+        <activity android:name=".activity.ShowProfileOtherUser" android:parentActivityName=".activity.MainActivity">
+        </activity>
+        <activity
+                android:name=".activity.AddConfiados"
+                android:parentActivityName=".activity.Confiados">
         </activity>
         <activity android:name=".activity.ChatLogActivity">
         </activity>

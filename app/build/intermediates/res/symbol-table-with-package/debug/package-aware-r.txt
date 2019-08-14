@@ -1190,6 +1190,7 @@ id center_horizontal
 id center_vertical
 id chains
 id chatFrom
+id chatPersonFromProfile
 id chatPersonMessage
 id chatTo
 id checkbox
@@ -1321,6 +1322,7 @@ id navigation_header_container
 id navigation_home
 id never
 id noTelepon
+id noTeleponO
 id none
 id normal
 id notification_background
@@ -1339,9 +1341,12 @@ id pin
 id prof_conf
 id profileFrom
 id profileGender
+id profileGenderO
 id profileMain
 id profileName
+id profileNameO
 id profilePic
+id profilePicO
 id profilePicTraveller
 id profilePicTravellerConfiados
 id profileTraveller
@@ -1356,6 +1361,7 @@ id recyclerView
 id recyclerViewCart
 id recyclerViewConfiados
 id recyclerViewDestination
+id recyclerViewOtherProfileDestination
 id recyclerViewProfileDestination
 id refresh
 id relative
@@ -1408,6 +1414,7 @@ id startDateUpload
 id startTravelingDate
 id startTravelingDateProfile
 id start_date_on_detail
+id statusOtherTraveller
 id statusTraveller
 id status_bar_latest_event_content
 id stretch
@@ -1440,6 +1447,7 @@ id toolbar2
 id toolbarAddConf
 id toolbarConf
 id toolbarEdit
+id toolbarO
 id toolbarUpload
 id toolbar_detail
 id top
@@ -1583,6 +1591,7 @@ layout row_friends
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout show_profile_other_user
 layout support_simple_spinner_dropdown_item
 layout toolbar
 layout user_row_new_message

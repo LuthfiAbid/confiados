@@ -1600,6 +1600,10 @@
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\1f3e328cd17a359dfe5e160e04a7592e\\res\\color\\mtrl_tabs_icon_color_selector_colored.xml"
     },
     {
+        "merged": "D:\\Android\\confiados\\app\\build\\intermediates\\res\\merged\\debug\\layout_show_profile_other_user.xml.flat",
+        "source": "D:\\Android\\confiados\\app\\src\\main\\res\\layout\\show_profile_other_user.xml"
+    },
+    {
         "merged": "D:\\Android\\confiados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\trainer\\.gradle\\caches\\transforms-2\\files-2.1\\ac6c1b31d83a136321cdefa20e62125d\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },

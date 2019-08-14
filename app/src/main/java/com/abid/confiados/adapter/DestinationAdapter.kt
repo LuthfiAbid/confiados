@@ -92,7 +92,7 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
             intent.putExtra("foto_profile", destinationModel.user!!.profile)
             intent.putExtra("gender", destinationModel.user!!.gender)
             intent.putExtra("notelp", destinationModel.user!!.phone)
-            intent.putExtra("id_user", destinationModel.iduser)
+            intent.putExtra("iduser", destinationModel.iduser)
             intent.putExtra("destination", destinationModel.destination)
             intent.putExtra("startDate", destinationModel.startDate)
             intent.putExtra("endDate", destinationModel.endDate)
