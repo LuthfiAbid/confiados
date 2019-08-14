@@ -12,17 +12,12 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".activity.ChatLogActivity">
         </activity>
-        <activity android:name=".activity.NewMessagesActivity">
-        </activity>
-        <activity android:name=".activity.DetailDestination"/>
+        <activity android:name=".activity.DetailDestination" android:parentActivityName=".activity.MainActivity"/>
         <activity android:name=".activity.LatesMessagesActivity">
-        </activity>
-        <activity android:name=".activity.ChatDetailsActivity">
-        </activity>
-        <activity android:name=".activity.SelectFriendActivity">
         </activity>
         <activity android:name=".activity.ChatActivity">
         </activity>

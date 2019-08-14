@@ -1096,6 +1096,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_not_found
 drawable ic_people
 drawable ic_person
+drawable ic_search_24dp
 drawable ic_send
 drawable layout_click
 drawable logo
@@ -1185,7 +1186,9 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id chatFrom
 id chatPersonMessage
+id chatTo
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1195,6 +1198,9 @@ id contact_on_detail
 id container
 id content
 id contentPanel
+id content_destination
+id content_end_date
+id content_start_date
 id coordinator
 id custom
 id customPanel
@@ -1217,6 +1223,7 @@ id editTextMessage
 id edit_query
 id end
 id endDateUpload
+id end_date_on_detail
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
@@ -1237,6 +1244,7 @@ id fixed
 id forever
 id genderProfileTraveller
 id genderTraveller
+id genderTraveller_on_detail
 id ghost_view
 id glide_custom_view_target_tag
 id gone
@@ -1256,6 +1264,7 @@ id imagePHolder
 id imageProfileHolder
 id imageView
 id image_status
+id imgCountry
 id img_placeholder_EditProfile
 id info
 id input_bar
@@ -1268,8 +1277,10 @@ id left
 id light
 id line1
 id line3
+id linearDestination
 id linearLayout
 id linearLayout2
+id listCountry
 id listMode
 id list_item
 id listview
@@ -1311,6 +1322,7 @@ id parent_matrix
 id percent
 id photo_profile_on_detail
 id pin
+id profileFrom
 id profileGender
 id profileMain
 id profileName
@@ -1342,6 +1354,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchCountry
 id search_badge
 id search_bar
 id search_button
@@ -1376,6 +1389,7 @@ id start
 id startDateUpload
 id startTravelingDate
 id startTravelingDateProfile
+id start_date_on_detail
 id statusTraveller
 id status_bar_latest_event_content
 id stretch
@@ -1393,7 +1407,6 @@ id textProfileDestination
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
 id text_content
 id text_input_password_toggle
 id text_time
@@ -1410,7 +1423,6 @@ id toolbarConf
 id toolbarEdit
 id toolbarUpload
 id toolbar_detail
-id toolbasConf
 id top
 id topPanel
 id touch_outside
@@ -1422,6 +1434,7 @@ id transition_transform
 id tv_login
 id tv_name
 id tv_register
+id txtCountry
 id uniform
 id unlabeled
 id unread
@@ -1519,6 +1532,7 @@ layout fragment_cart
 layout fragment_chats
 layout fragment_home
 layout fragment_upload
+layout item_country
 layout item_list_destination
 layout item_list_destination_on_profile
 layout mtrl_layout_snackbar
@@ -1538,6 +1552,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout popup_countries
 layout row_chat_details
 layout row_chats
 layout row_friends

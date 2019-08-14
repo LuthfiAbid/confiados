@@ -2,6 +2,7 @@ package com.abid.confiados.activity
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -11,27 +12,35 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.util.Log.e
+import android.view.LayoutInflater
 import android.view.View
 import android.webkit.MimeTypeMap
+import android.widget.EditText
+import android.widget.ListView
 import android.widget.Toast
 import com.abid.confiados.data.Pref
 import com.abid.confiados.R
+import com.abid.confiados.adapter.CountryAdapter
+import com.abid.confiados.model.CountryModel
 import com.abid.confiados.model.DestinationModel
+import com.abid.confiados.utils.ApiClient
+import com.abid.confiados.utils.ApiInterface
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_upload.*
-import kotlinx.android.synthetic.main.fragment_upload.btnUploadDestination
-import kotlinx.android.synthetic.main.fragment_upload.endDateUpload
-import kotlinx.android.synthetic.main.fragment_upload.imagePHolder
-import kotlinx.android.synthetic.main.fragment_upload.progressDownload
-import kotlinx.android.synthetic.main.fragment_upload.startDateUpload
-import kotlinx.android.synthetic.main.fragment_upload.uploadDestination
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.IOException
 import java.util.*
+import kotlin.collections.ArrayList
 
 class UploadActivity : AppCompatActivity() {
     lateinit var pref: Pref
@@ -58,6 +67,9 @@ class UploadActivity : AppCompatActivity() {
         pref = Pref(this)
         firebaseStorage = FirebaseStorage.getInstance()
         storageReference = firebaseStorage.reference
+        linearDestination.setOnClickListener {
+            showDialogCountry()
+        }
 
         imagePHolder.setOnClickListener {
             when {
@@ -212,5 +224,82 @@ class UploadActivity : AppCompatActivity() {
         val contentResolver = this.contentResolver
         val mimeTypeMap = MimeTypeMap.getSingleton()
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri))
+    }
+
+    fun showDialogCountry(){
+        var dialog : AlertDialog
+        val builder = AlertDialog.Builder(this)
+        val view = LayoutInflater.from(this).inflate(R.layout.popup_countries, null)
+
+        builder.setView(view)
+        val searchCountry : EditText = view.findViewById(R.id.searchCountry)
+        val listCountry : ListView = view.findViewById(R.id.listCountry)
+        getCountry(listCountry)
+        searchCountry.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s!!.isNotEmpty()) {
+                    getCountry(listCountry, s.toString())
+                } else {
+                    getCountry(listCountry)
+                }
+            }
+
+        })
+        dialog = builder.create()
+        dialog.show()
+        listCountry.setOnItemClickListener { parent, view, position, id ->
+            val country = parent.adapter.getItem(position) as CountryModel
+            uploadDestination.text = country.name
+            dialog.dismiss()
+        }
+
+    }
+
+    fun getCountry(listCountry : ListView) {
+        val apiInterface = ApiClient().getClient().create(ApiInterface::class.java)
+        apiInterface.getCountry().enqueue(object : Callback<ArrayList<CountryModel>> {
+            override fun onResponse(call: Call<ArrayList<CountryModel>>, response: Response<ArrayList<CountryModel>>) {
+                if (response.code() == 200) {
+                    listCountry.adapter = CountryAdapter(response.body()!!,this@UploadActivity)
+                } else {
+                    Toast.makeText(this@UploadActivity, "Gagal", Toast.LENGTH_SHORT).show()
+                    e("without search", "error ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<CountryModel>>, t: Throwable) {
+                Toast.makeText(this@UploadActivity, "Gagal", Toast.LENGTH_SHORT).show()
+                e("without search", "error", t)
+            }
+
+        })
+    }
+
+    fun getCountry(listCountry: ListView, name : String) {
+        val apiInterface = ApiClient().getClient().create(ApiInterface::class.java)
+        apiInterface.getCountry(name).enqueue(object : Callback<ArrayList<CountryModel>> {
+            override fun onResponse(call: Call<ArrayList<CountryModel>>, response: Response<ArrayList<CountryModel>>) {
+                if (response.code() == 200) {
+                    listCountry.adapter = CountryAdapter(response.body()!!,this@UploadActivity)
+                } else {
+                    Toast.makeText(this@UploadActivity, "Gagal", Toast.LENGTH_SHORT).show()
+                    e("with search", "error ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<CountryModel>>, t: Throwable) {
+                Toast.makeText(this@UploadActivity, "Gagal", Toast.LENGTH_SHORT).show()
+                e("with search", "error", t)
+            }
+
+        })
     }
 }

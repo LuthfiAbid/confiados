@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
                CartFrag()
                 return@OnNavigationItemSelectedListener true
             }
+            R.id.navigation_chat ->{
+
+            }
         }
         false
     }

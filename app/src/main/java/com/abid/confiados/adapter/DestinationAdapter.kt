@@ -2,6 +2,7 @@ package com.abid.confiados.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.opengl.Visibility
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,6 +20,7 @@ import com.abid.confiados.fragment.HomeFragment
 import com.abid.confiados.model.DestinationModel
 import com.abid.confiados.model.UserModel
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationViewHolder> {
@@ -26,6 +28,7 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
     lateinit var itemDestination: List<DestinationModel>
     lateinit var pref: Pref
     lateinit var dbRef: DatabaseReference
+    lateinit var fauth: FirebaseAuth
 
     constructor()
     constructor(mCtx: Context, list: List<DestinationModel>) {
@@ -46,7 +49,7 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
 
     override fun onBindViewHolder(p0: DestinationViewHolder, p1: Int) {
         val destinationModel: DestinationModel = itemDestination.get(p1)
-
+        fauth = FirebaseAuth.getInstance()
         FirebaseDatabase.getInstance()
             .getReference("dataUser/")
             .child(destinationModel.iduser!!)
@@ -70,19 +73,23 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
         p0.tv_destination.text = destinationModel.destination
         p0.tv_startDate.text = destinationModel.startDate
         p0.tv_endDate.text = destinationModel.endDate
-        p0.chat.setOnClickListener {
-            Toast.makeText(mCtx, "Tes", Toast.LENGTH_SHORT).show()
-            val intent : Intent = Intent(mCtx, ChatLogActivity::class.java)
-            intent.putExtra("nama_user", destinationModel.user!!.nama)
-            intent.putExtra("foto_profil", destinationModel.user!!.profile)
-            intent.putExtra("id_user", destinationModel.iduser)
-            mCtx.startActivity(intent)
+        if (fauth.currentUser?.uid == destinationModel.iduser) {
+            p0.chat.visibility = View.GONE
+        } else {
+            p0.chat.setOnClickListener {
+                Toast.makeText(mCtx, "Tes", Toast.LENGTH_SHORT).show()
+                val intent: Intent = Intent(mCtx, ChatLogActivity::class.java)
+                intent.putExtra("nama_user", destinationModel.user!!.nama)
+                intent.putExtra("foto_profil", destinationModel.user!!.profile)
+                intent.putExtra("id_user", destinationModel.iduser)
+                mCtx.startActivity(intent)
+            }
         }
         p0.ll.setOnClickListener {
             Toast.makeText(mCtx, "Detail", Toast.LENGTH_SHORT).show()
-            val intent : Intent = Intent(mCtx, DetailDestination::class.java)
+            val intent: Intent = Intent(mCtx, DetailDestination::class.java)
             intent.putExtra("nama_user", destinationModel.user!!.nama)
-            intent.putExtra("foto_profil", destinationModel.user!!.profile)
+            intent.putExtra("foto_profile", destinationModel.user!!.profile)
             intent.putExtra("gender", destinationModel.user!!.gender)
             intent.putExtra("notelp", destinationModel.user!!.phone)
             intent.putExtra("id_user", destinationModel.iduser)
