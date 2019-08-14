@@ -48,9 +48,9 @@ class UploadActivity : AppCompatActivity() {
     val REQUEST_CODE_IMAGE = 10002
     val PERMISSION_RC = 10003
     lateinit var filePathImage: Uri
-    lateinit var dbRef: DatabaseReference
     lateinit var firebaseStorage: FirebaseStorage
     lateinit var storageReference: StorageReference
+    lateinit var dbRef: DatabaseReference
     lateinit var fAuth: FirebaseAuth
     lateinit var destinationModel: DestinationModel
     var dataxxx: String? = null
