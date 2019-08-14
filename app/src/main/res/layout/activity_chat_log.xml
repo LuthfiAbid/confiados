@@ -1,0 +1,45 @@
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffff"
+        android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="8dp"
+            android:id="@+id/toolbar2"/>
+    <android.support.v7.widget.RecyclerView
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rcViewChat"
+            android:layout_below="@+id/toolbar2"/>
+    <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/buttonSendMessages"
+                android:hint="Kirim pesan . . ."
+                android:ems="10"
+                android:id="@+id/editTextMessage"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"/>
+        <Button
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonSendMessages"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ddd"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextColor="@android:color/white"
+            android:background="#033970"
+            android:layout_alignParentTop="true"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar_detail"/>
+    <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/toolbar_detail"
+            android:id="@+id/header_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/photo_profile_on_detail"
+                android:layout_margin="10dp"
+                android:src="@drawable/maldives"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+        <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/photo_profile_on_detail"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:text="Luthfi Abid"
+                        android:id="@+id/nameTraveller_on_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:textAlignment="textEnd"
+                        android:layout_marginEnd="40dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:text="Female"
+                        android:id="@+id/genderTraveller_on_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="+62898979889890809"
+                    android:id="@+id/contact_on_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+            android:layout_below="@+id/header_detail"
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            android:id="@+id/bukti_on_detail"
+            android:contentDescription="BUKTI"/>
+
+    <LinearLayout
+            android:background="#fff"
+            android:id="@+id/content_destination"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/bukti_on_detail"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Destination : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Thailand"
+                android:gravity="end"
+                android:id="@+id/destination_on_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+            android:background="#fff"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/content_destination"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:id="@+id/content_start_date"
+            android:layout_marginHorizontal="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Travelling at : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="908798980"
+                android:gravity="end"
+                android:id="@+id/start_date_on_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+            android:background="#fff"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/content_start_date"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:id="@+id/content_end_date"
+            android:layout_marginHorizontal="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="Go Home at : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:text="98098908908"
+                android:gravity="end"
+                android:id="@+id/end_date_on_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -22,43 +22,47 @@ class MainActivity : AppCompatActivity() {
     lateinit var dbRef: DatabaseReference
     lateinit var pref: Pref
     private var content: FrameLayout? = null
+    val manager = supportFragmentManager
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                val fragment = HomeFragment.newInstance()
-                addFragment(fragment)
+                HomeFrag()
+                return@OnNavigationItemSelectedListener true
             }
 //            R.id.navigation_chat -> {
 //                val fragment = UploadFragment()
 //                addFragment(fragment)
 //            }
             R.id.navigation_cart -> {
-                val fragment = CartFragment()
-                addFragment(fragment)
+               CartFrag()
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_chat ->{
+
             }
         }
         false
     }
-
-    private fun addFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .setCustomAnimations(
-                R.anim.design_bottom_sheet_slide_in,
-                R.anim.design_bottom_sheet_slide_out
-            )
-            .replace(R.id.content, fragment, fragment.javaClass.simpleName)
-            .commit()
-    }
+//
+//    private fun addFragment(fragment: Fragment) {
+//        supportFragmentManager
+//            .beginTransaction()
+//            .setCustomAnimations(
+//                R.anim.design_bottom_sheet_slide_in,
+//                R.anim.design_bottom_sheet_slide_out
+//            )
+//            .replace(R.id.content, fragment, fragment.javaClass.simpleName)
+//            .commit()
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         pref = Pref(this)
+        HomeFrag()
         fAuth = FirebaseAuth.getInstance()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        val fragment = HomeFragment.newInstance()
-        addFragment(fragment)
 
         FirebaseDatabase.getInstance().getReference("dataUser/${fAuth.uid}")
             .child("profile").addListenerForSingleValueEvent(object : ValueEventListener {
@@ -82,5 +86,20 @@ class MainActivity : AppCompatActivity() {
         profileMain.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
+    }
+    fun HomeFrag() {
+        val transaction = manager.beginTransaction()
+        val fragment = HomeFragment()
+        transaction.replace(R.id.content, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    fun CartFrag() {
+        val transaction = manager.beginTransaction()
+        val fragment = CartFragment()
+        transaction.replace(R.id.content, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

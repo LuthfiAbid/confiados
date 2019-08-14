@@ -104,7 +104,7 @@ class ProfileActivity : AppCompatActivity() {
                     val addDataAll = dataSnapshot.getValue(
                         DestinationModel::class.java
                     )
-                    addDataAll!!.setKey(dataSnapshot.key!!)
+                    addDataAll!!.key = dataSnapshot.key
                     list.add(addDataAll)
                     destinationProfileAdapter = DestinationProfileAdapter(this@ProfileActivity, list)
                     recyclerView!!.adapter = destinationProfileAdapter

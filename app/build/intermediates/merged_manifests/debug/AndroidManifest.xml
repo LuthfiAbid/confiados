@@ -28,7 +28,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true" >
+        <activity android:name="com.abid.confiados.activity.ChatLogActivity" >
+        </activity>
+        <activity
+            android:name="com.abid.confiados.activity.DetailDestination"
+            android:parentActivityName="com.abid.confiados.activity.MainActivity" />
+        <activity android:name="com.abid.confiados.activity.LatesMessagesActivity" >
+        </activity>
+        <activity android:name="com.abid.confiados.activity.ChatActivity" >
+        </activity>
         <activity
             android:name="com.abid.confiados.activity.Confiados"
             android:parentActivityName="com.abid.confiados.activity.ProfileActivity" >
