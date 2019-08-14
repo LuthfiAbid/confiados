@@ -11,6 +11,9 @@ class DetailDestination: AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_destination)
+        setSupportActionBar(toolbar_detail)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.title = "DETAIL"
         val name = intent.getStringExtra("nama_user")
         val imageProf = intent.getStringExtra("foto_profile")
         val noTelp = intent.getStringExtra("notelp")
