@@ -666,6 +666,7 @@ color grey_soft
 color grey_text
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color info
 color material_blue_grey_800
 color material_blue_grey_900
@@ -1332,6 +1333,7 @@ id parent
 id parentPanel
 id parent_matrix
 id percent
+id phoneTravellerConfiados
 id photo_profile_on_detail
 id pin
 id prof_conf
@@ -1351,6 +1353,7 @@ id progress_horizontal
 id radio
 id rcViewChat
 id recyclerView
+id recyclerViewCart
 id recyclerViewConfiados
 id recyclerViewDestination
 id recyclerViewProfileDestination
@@ -1448,7 +1451,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tv_login
-id tv_name
 id tv_register
 id txtCountry
 id txtUser
@@ -1551,7 +1553,6 @@ layout fragment_cart
 layout fragment_chat
 layout fragment_chats
 layout fragment_home
-layout fragment_upload
 layout item_country
 layout item_list_confiados
 layout item_list_destination
@@ -1587,6 +1588,7 @@ layout toolbar
 layout user_row_new_message
 menu navigation
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description

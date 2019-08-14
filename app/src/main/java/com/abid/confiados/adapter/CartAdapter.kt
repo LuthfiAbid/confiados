@@ -56,6 +56,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.ConfiadosViewHolder> {
                         .into(p0.imageProfile)
                     p0.tv_name.text = confiadosModel.user!!.nama
                     p0.tv_gender.text = confiadosModel.user!!.gender
+                    p0.tv_phone.text = confiadosModel.user!!.phone
                 }
 
                 override fun onCancelled(p0: DatabaseError) {
@@ -71,6 +72,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.ConfiadosViewHolder> {
         var tv_name: TextView
         var tv_gender: TextView
         var tv_confiados: TextView
+        var tv_phone: TextView
 
         init {
             llConfiados = itemView.findViewById(R.id.llConfiados)
@@ -78,6 +80,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.ConfiadosViewHolder> {
             tv_name = itemView.findViewById(R.id.nameProfileTravellerConfiados)
             tv_gender = itemView.findViewById(R.id.genderProfileTravellerConfiados)
             tv_confiados = itemView.findViewById(R.id.confiadosItemList)
+            tv_phone = itemView.findViewById(R.id.phoneTravellerConfiados)
         }
     }
 

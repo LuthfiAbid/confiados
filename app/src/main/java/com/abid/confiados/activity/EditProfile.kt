@@ -23,7 +23,6 @@ import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.edit_profile.*
-import kotlinx.android.synthetic.main.fragment_upload.*
 import java.io.IOException
 
 class EditProfile : AppCompatActivity() {

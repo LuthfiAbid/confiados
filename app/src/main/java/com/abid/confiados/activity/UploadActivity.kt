@@ -35,6 +35,12 @@ import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_upload.*
+import kotlinx.android.synthetic.main.activity_upload.btnUploadDestination
+import kotlinx.android.synthetic.main.activity_upload.endDateUpload
+import kotlinx.android.synthetic.main.activity_upload.imagePHolder
+import kotlinx.android.synthetic.main.activity_upload.progressDownload
+import kotlinx.android.synthetic.main.activity_upload.startDateUpload
+import kotlinx.android.synthetic.main.activity_upload.uploadDestination
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -105,8 +111,8 @@ class UploadActivity : AppCompatActivity() {
 
         btnUploadDestination.setOnClickListener {
             val destination = uploadDestination.text.toString()
-            val startDate = startDateUpload.text.toString()
-            val endDate = endDateUpload.text.toString()
+            val startDate = startDateUpload.toString()
+            val endDate = endDateUpload.toString()
 
             if (destination.isNotEmpty() || startDate.isNotEmpty() ||
                 endDate.isNotEmpty()

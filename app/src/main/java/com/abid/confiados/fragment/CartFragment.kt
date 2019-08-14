@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.abid.confiados.R
+import com.abid.confiados.adapter.CartAdapter
 import com.abid.confiados.adapter.ConfiadosAdapter
 import com.abid.confiados.adapter.DestinationAdapter
 import com.abid.confiados.data.Pref
@@ -23,7 +24,7 @@ import java.util.ArrayList
 class CartFragment : Fragment() {
 
     private lateinit var fAuth: FirebaseAuth
-    private var confiadosAdapter: ConfiadosAdapter? = null
+    private var cartAdapter: CartAdapter? = null
     private var recyclerView: RecyclerView? = null
     private var list: MutableList<ConfiadosModel> = ArrayList()
     lateinit var dbRef: DatabaseReference
@@ -64,8 +65,8 @@ class CartFragment : Fragment() {
                         dataSnapshot.getValue(ConfiadosModel::class.java)
                     addDataAll!!.key = dataSnapshot.key
                     list.add(addDataAll)
-                    confiadosAdapter = ConfiadosAdapter(context!!, list)
-                    recyclerView!!.adapter = confiadosAdapter
+                    cartAdapter = CartAdapter(context!!, list)
+                    recyclerView!!.adapter = cartAdapter
                 }
             }
 
