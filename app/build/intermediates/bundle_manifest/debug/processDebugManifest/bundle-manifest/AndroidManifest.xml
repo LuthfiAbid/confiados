@@ -30,6 +30,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.abid.confiados.activity.AddConfiados"
+            android:parentActivityName="com.abid.confiados.activity.Confiados" >
+        </activity>
         <activity android:name="com.abid.confiados.activity.ChatLogActivity" >
         </activity>
         <activity

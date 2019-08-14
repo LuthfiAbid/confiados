@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 import android.os.Parcelable
 //
 class UserModel (
+    var key: String = "1",
     var id : String = "qwqe",
     var nama : String = "qwewqe",
     var gender : String = "qwee",

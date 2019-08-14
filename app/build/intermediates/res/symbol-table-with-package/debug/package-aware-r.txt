@@ -1158,6 +1158,7 @@ id actions
 id activity_chooser_view_content
 id add
 id addConfiados
+id add_Conf
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1171,6 +1172,7 @@ id blocking
 id bottom
 id bt_editProf
 id btnUploadDestination
+id btn_add_confiados
 id btn_confiados
 id btn_login
 id btn_login_google
@@ -1194,6 +1196,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id confiadosItemList
 id contact_on_detail
 id container
 id content
@@ -1227,6 +1230,7 @@ id end_date_on_detail
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id et_confiados
 id et_editnama
 id et_editnohp
 id et_email
@@ -1243,6 +1247,7 @@ id filled
 id fixed
 id forever
 id genderProfileTraveller
+id genderProfileTravellerConfiados
 id genderTraveller
 id genderTraveller_on_detail
 id ghost_view
@@ -1265,6 +1270,7 @@ id imageProfileHolder
 id imageView
 id image_status
 id imgCountry
+id imgUser
 id img_placeholder_EditProfile
 id info
 id input_bar
@@ -1277,14 +1283,18 @@ id left
 id light
 id line1
 id line3
+id linearConfiado
 id linearDestination
 id linearLayout
 id linearLayout2
+id linearUser
 id listCountry
 id listMode
+id listUser
 id list_item
 id listview
 id ll
+id llConfiados
 id llProfile
 id lyt_not_found
 id lyt_parent
@@ -1300,10 +1310,12 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id name
 id nameProfileTraveller
+id nameProfileTravellerConfiados
 id nameTraveller
 id nameTraveller_on_detail
 id navigation
 id navigation_cart
+id navigation_chat
 id navigation_header_container
 id navigation_home
 id never
@@ -1322,12 +1334,14 @@ id parent_matrix
 id percent
 id photo_profile_on_detail
 id pin
+id prof_conf
 id profileFrom
 id profileGender
 id profileMain
 id profileName
 id profilePic
 id profilePicTraveller
+id profilePicTravellerConfiados
 id profileTraveller
 id progressBar
 id progressDownload
@@ -1355,6 +1369,7 @@ id scrollIndicatorUp
 id scrollView
 id scrollable
 id searchCountry
+id searchUser
 id search_badge
 id search_bar
 id search_button
@@ -1419,6 +1434,7 @@ id titleDividerNoCustom
 id title_template
 id toolbar
 id toolbar2
+id toolbarAddConf
 id toolbarConf
 id toolbarEdit
 id toolbarUpload
@@ -1435,6 +1451,7 @@ id tv_login
 id tv_name
 id tv_register
 id txtCountry
+id txtUser
 id uniform
 id unlabeled
 id unread
@@ -1442,6 +1459,7 @@ id up
 id uploadDestination
 id upload_destination
 id useLogo
+id user_on_add_confiados
 id view_offset_helper
 id visible
 id wide
@@ -1496,6 +1514,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_confiados
 layout activity_chat
 layout activity_chat_details
 layout activity_chat_log
@@ -1529,12 +1548,15 @@ layout design_text_input_password_icon
 layout detail_destination
 layout edit_profile
 layout fragment_cart
+layout fragment_chat
 layout fragment_chats
 layout fragment_home
 layout fragment_upload
 layout item_country
+layout item_list_confiados
 layout item_list_destination
 layout item_list_destination_on_profile
+layout item_user
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1553,6 +1575,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout popup_countries
+layout popup_user
 layout row_chat_details
 layout row_chats
 layout row_friends
