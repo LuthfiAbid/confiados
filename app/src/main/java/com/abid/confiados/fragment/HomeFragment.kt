@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.abid.confiados.data.Pref
 import com.abid.confiados.R
 import com.abid.confiados.activity.ChatLogActivity
+import com.abid.confiados.activity.UploadActivity
 import com.abid.confiados.adapter.DestinationAdapter
 import com.abid.confiados.model.DestinationModel
 import com.abid.confiados.model.UserModel
@@ -57,6 +58,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pref = Pref(context!!)
+        upload_destination.setOnClickListener {
+            startActivity(Intent(context!!, UploadActivity::class.java))
+        }
         var linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recyclerView = view.findViewById(R.id.recyclerViewDestination)
         recyclerView!!.layoutManager = linearLayoutManager

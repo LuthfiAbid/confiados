@@ -1,17 +1,20 @@
 package com.abid.confiados.model
 
-import android.os.Parcel
-import kotlinx.android.parcel.Parcelize
-import android.os.Parcelable
-//
-class UserModel (
-    var key: String = "1",
-    var id : String = "qwqe",
-    var nama : String = "qwewqe",
-    var gender : String = "qwee",
-    var password : String = "qweqwe",
-    var phone : String = "qweqwe",
-    var email : String = "qweqwe",
-    var profile : String = "qweqwe"
-)
-//
+import android.os.*
+import kotlinx.android.parcel.*
+import java.io.Serializable
+
+//@Parcelize
+class UserModel(
+    var key: String,
+    var id: String,
+    var nama: String,
+    var gender: String,
+    var password: String,
+    var phone: String,
+    var email: String,
+    var profile: String
+):Serializable
+    {
+    constructor() : this("", "", "", "", "", "", "", "")
+}

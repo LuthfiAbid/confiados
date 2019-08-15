@@ -76,16 +76,16 @@
                 android:textColor="#000"
                 android:textSize="15sp"
                 android:background="#ffff"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OR"
-                android:textSize="18sp"
-                android:textColor="#000"/>
-        <com.google.android.gms.common.SignInButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
-                android:id="@+id/btn_login_google"/>
+        <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="OR"-->
+                <!--android:textSize="18sp"-->
+                <!--android:textColor="#000"/>-->
+        <!--<com.google.android.gms.common.SignInButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="30dp"-->
+                <!--android:id="@+id/btn_login_google"/>-->
     </LinearLayout>
 </LinearLayout>
