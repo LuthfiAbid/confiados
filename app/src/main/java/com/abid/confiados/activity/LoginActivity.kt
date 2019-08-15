@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         configureGoogleSignIn()
-        setupUI()
+//        setupUI()
         pref = Pref(this)
         fAuth = FirebaseAuth.getInstance()
         if (!pref.cekStatus()!!) {
@@ -107,11 +107,11 @@ class LoginActivity : AppCompatActivity() {
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
     }
-    private fun setupUI() {
-        btn_login_google.setOnClickListener {
-            signIn()
-        }
-    }
+//    private fun setupUI() {
+//        btn_login_google.setOnClickListener {
+//            signIn()
+//        }
+//    }
     private fun signIn() {
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)

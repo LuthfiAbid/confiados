@@ -3,6 +3,7 @@ package com.abid.confiados.activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.abid.confiados.R
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -42,6 +43,9 @@ class DetailDestination : AppCompatActivity() {
         destination_on_detail.text = destination
         start_date_on_detail.text = startDate
         end_date_on_detail.text = endDate
+        if (fAuth.uid == iduser){
+            btn_chat_on_detail.visibility = View.GONE
+        }
         photo_profile_on_detail.setOnClickListener {
             if (iduser == fAuth.uid) {
                 startActivity(Intent(this, ProfileActivity::class.java))
