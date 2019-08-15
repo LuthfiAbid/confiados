@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
         fAuth = FirebaseAuth.getInstance()
         dbRef = FirebaseDatabase.getInstance()
             .getReference("destination")
-        dbRef.addValueEventListener(object : ValueEventListener {
+        dbRef.orderByChild("startDate").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(data: DataSnapshot) {
                 list = ArrayList()
                 for (dataSnapshot in data.children) {

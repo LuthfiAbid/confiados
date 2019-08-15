@@ -1,6 +1,7 @@
 package com.abid.confiados.adapter
 
 import android.content.Context
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,19 +10,19 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.abid.confiados.R
 import com.abid.confiados.model.ConfiadosModel
 import com.abid.confiados.model.DestinationModel
 import com.abid.confiados.model.UserModel
 import com.bumptech.glide.Glide
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
+import de.hdodenhof.circleimageview.CircleImageView
 
 class ConfiadosAdapter : RecyclerView.Adapter<ConfiadosAdapter.ConfiadosViewHolder> {
     lateinit var mCtx: Context
     lateinit var itemConfiados: List<ConfiadosModel>
+    lateinit var dbRef: DatabaseReference
 
     constructor()
     constructor(mCtx: Context, list: List<ConfiadosModel>) {
@@ -63,7 +64,29 @@ class ConfiadosAdapter : RecyclerView.Adapter<ConfiadosAdapter.ConfiadosViewHold
                     Log.e("cok", p0.message)
                 }
             })
+        p0.tv_dest.text = confiadosModel.destination
         p0.tv_confiados.text = confiadosModel.confiados
+        p0.bt_delConf.setOnClickListener {
+            val builder = AlertDialog.Builder(mCtx)
+            builder.setMessage("Delete Item")
+            builder.setPositiveButton("No") { dialog, i ->
+                dialog.dismiss()
+            }
+            builder.setNegativeButton("Yes") { dialog, i ->
+                dbRef = FirebaseDatabase.getInstance()
+                    .getReference("dataConfiados")
+                dbRef.child(confiadosModel.key!!).removeValue()
+                    .addOnSuccessListener {
+                        Toast.makeText(
+                            mCtx,
+                            "Delete Success",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+            }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+        }
     }
 
     inner class ConfiadosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -73,6 +96,8 @@ class ConfiadosAdapter : RecyclerView.Adapter<ConfiadosAdapter.ConfiadosViewHold
         var tv_gender: TextView
         var tv_confiados: TextView
         var tv_phone : TextView
+        var tv_dest : TextView
+        var bt_delConf : CircleImageView
 
         init {
             llConfiados = itemView.findViewById(R.id.llConfiados)
@@ -80,7 +105,9 @@ class ConfiadosAdapter : RecyclerView.Adapter<ConfiadosAdapter.ConfiadosViewHold
             tv_name = itemView.findViewById(R.id.nameProfileTravellerConfiados)
             tv_gender = itemView.findViewById(R.id.genderProfileTravellerConfiados)
             tv_confiados = itemView.findViewById(R.id.confiadosItemList)
+            tv_dest = itemView.findViewById(R.id.destinationTravellerConfiados)
             tv_phone = itemView.findViewById(R.id.phoneTravellerConfiados)
+            bt_delConf = itemView.findViewById(R.id.bt_DeleteConf)
         }
     }
 

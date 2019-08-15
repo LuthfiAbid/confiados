@@ -5,6 +5,7 @@ class ConfiadosModel(
     var iduser: String? = null,
     var idusertitip: String? = null,
     var confiados: String? = null,
+    var destination: String? = null,
     var user: UserModel? = null,
     var usertitip: UserModel? = null
 )

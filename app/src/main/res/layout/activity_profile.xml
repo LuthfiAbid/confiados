@@ -55,17 +55,17 @@
                 android:text="Confiados"
                 android:layout_margin="5dp"
                 android:layout_below="@+id/linearLayout"
-                android:layout_toStartOf="@+id/btn_logout"
+                android:layout_alignParentEnd="true"
                 android:id="@+id/btn_confiados"
                 android:background="#022d58"
                 android:textColor="#ffff"
                 android:textSize="12sp"/>
 
         <Button
+                android:layout_toEndOf="@+id/profilePic"
+                android:layout_below="@+id/profileGender"
                 android:layout_margin="5dp"
                 android:id="@+id/btn_logout"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LOGOUT"
@@ -84,22 +84,37 @@
                 android:layout_marginTop="15dp"
                 android:layout_toEndOf="@+id/profilePic"
                 android:id="@+id/profileName"/>
+
         <TextView
+                android:layout_below="@id/linearLayout"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:id="@+id/cp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
+                android:layout_alignParentStart="true"
+                android:text="CP : "
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"/>
+
+        <TextView
+
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="082156575523"
-                android:layout_below="@+id/profileName"
-                android:layout_toEndOf="@+id/profilePic"
+                android:layout_toEndOf="@+id/cp"
+                android:layout_toStartOf="@+id/btn_confiados"
+                android:layout_below="@+id/linearLayout"
                 android:textAlignment="textStart"
                 android:textSize="18sp"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:id="@+id/noTelepon"/>
         <TextView
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/noTelepon"
+                android:layout_below="@+id/profileName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/profilePic"
@@ -108,30 +123,6 @@
                 android:textAlignment="textStart"
                 android:textSize="18sp"
                 android:id="@+id/profileGender"/>
-        <LinearLayout
-                android:layout_marginStart="15dp"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/linearLayout"
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp">
-            <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Status :"
-                    android:textColor="#000000"
-                    android:textSize="20sp"/>
-            <TextView
-                    android:id="@+id/statusTraveller"
-                    android:layout_marginStart="20dp"
-                    android:textSize="20sp"
-                    android:layout_gravity="center_vertical"
-                    android:textColor="#000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TRIP"/>
-        </LinearLayout>
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView

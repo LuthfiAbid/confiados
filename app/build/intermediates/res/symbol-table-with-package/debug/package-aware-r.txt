@@ -1055,6 +1055,7 @@ drawable avd_show_password
 drawable baseline_done_24
 drawable baseline_done_all_24
 drawable baseline_exit_to_app_24
+drawable btn_selector
 drawable button_send
 drawable circle_blue
 drawable common_full_open_on_phone
@@ -1171,9 +1172,13 @@ id barrier
 id beginning
 id blocking
 id bottom
+id boxoboxobox
+id bt_DeleteConf
+id bt_editDest
 id bt_editProf
 id btnUploadDestination
 id btn_add_confiados
+id btn_chat_on_detail
 id btn_confiados
 id btn_login
 id btn_login_google
@@ -1207,6 +1212,7 @@ id content_destination
 id content_end_date
 id content_start_date
 id coordinator
+id cp
 id custom
 id customPanel
 id custom_toast_container
@@ -1219,6 +1225,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id destinationFilter
+id destinationTravellerConfiados
 id destination_on_detail
 id dimensions
 id direct
@@ -1286,11 +1293,16 @@ id light
 id line1
 id line3
 id linearConfiado
+id linearDesti
+id linearDestiOnclick
 id linearDestination
+id linearEndDate
 id linearLayout
 id linearLayout2
+id linearStartDate
 id linearUser
 id listCountry
+id listDest
 id listMode
 id listUser
 id list_item
@@ -1378,6 +1390,7 @@ id scrollIndicatorUp
 id scrollView
 id scrollable
 id searchCountry
+id searchDest
 id searchUser
 id search_badge
 id search_bar
@@ -1415,7 +1428,6 @@ id startTravelingDate
 id startTravelingDateProfile
 id start_date_on_detail
 id statusOtherTraveller
-id statusTraveller
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -1458,9 +1470,11 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_desti
 id tv_login
 id tv_register
 id txtCountry
+id txtDest
 id txtUser
 id uniform
 id unlabeled
@@ -1562,6 +1576,7 @@ layout fragment_chat
 layout fragment_chats
 layout fragment_home
 layout item_country
+layout item_destination
 layout item_list_confiados
 layout item_list_destination
 layout item_list_destination_on_profile
@@ -1584,6 +1599,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout popup_countries
+layout popup_destination
 layout popup_user
 layout row_chat_details
 layout row_chats

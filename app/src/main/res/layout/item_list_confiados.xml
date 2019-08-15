@@ -14,19 +14,30 @@
             android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
                 android:src="@android:color/holo_red_dark"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:id="@+id/profilePicTravellerConfiados"
                 android:layout_alignParentStart="true"
-                android:layout_height="40dp"/>
-        <TextView
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Luthfi Abid"
-                android:layout_toEndOf="@+id/profilePicTravellerConfiados"
-                android:id="@+id/nameProfileTravellerConfiados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50dp"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_centerVertical="true"
+                      android:layout_toEndOf="@+id/profilePicTravellerConfiados"
+                      android:layout_height="wrap_content">
+            <TextView
+                    android:layout_marginStart="20dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="Luthfi Abid"
+                    android:id="@+id/nameProfileTravellerConfiados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_marginStart="20dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="Thailand"
+                    android:id="@+id/destinationTravellerConfiados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
         <TextView
                 android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
@@ -79,4 +90,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_gravity="end"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:id="@+id/bt_DeleteConf"/>
 </LinearLayout>
