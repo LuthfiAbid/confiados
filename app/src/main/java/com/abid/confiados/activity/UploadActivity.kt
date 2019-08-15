@@ -3,6 +3,7 @@ package com.abid.confiados.activity
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -19,6 +20,7 @@ import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.webkit.MimeTypeMap
+import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
@@ -35,6 +37,12 @@ import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_upload.*
+import kotlinx.android.synthetic.main.activity_upload.btnUploadDestination
+import kotlinx.android.synthetic.main.activity_upload.endDateUpload
+import kotlinx.android.synthetic.main.activity_upload.imagePHolder
+import kotlinx.android.synthetic.main.activity_upload.progressDownload
+import kotlinx.android.synthetic.main.activity_upload.startDateUpload
+import kotlinx.android.synthetic.main.activity_upload.uploadDestination
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,7 +50,9 @@ import java.io.IOException
 import java.util.*
 import kotlin.collections.ArrayList
 
-class UploadActivity : AppCompatActivity() {
+class UploadActivity : AppCompatActivity() , DatePickerDialog.OnDateSetListener {
+
+    lateinit var datePickerDialog : DatePickerDialog
     lateinit var pref: Pref
     var value = 0.0
     val REQUEST_CODE_IMAGE = 10002
@@ -55,6 +65,39 @@ class UploadActivity : AppCompatActivity() {
     lateinit var destinationModel: DestinationModel
     var dataxxx: String? = null
     var counter = 0
+
+    fun showDatePickerDialogStart(){
+        pref = Pref(this)
+        pref.setStartDate(true)
+        datePickerDialog = DatePickerDialog(
+            this,
+            this,
+            Calendar.getInstance().get(Calendar.YEAR),
+            Calendar.getInstance().get(Calendar.MONTH),
+            Calendar.getInstance().get(Calendar.DAY_OF_MONTH))
+        datePickerDialog.show()
+    }
+
+    fun showDatePickerDialogEnd(){
+        datePickerDialog = DatePickerDialog(
+            this,
+            this,
+            Calendar.getInstance().get(Calendar.YEAR),
+            Calendar.getInstance().get(Calendar.MONTH),
+            Calendar.getInstance().get(Calendar.DAY_OF_MONTH))
+        datePickerDialog.show()
+    }
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        val date = "" + dayOfMonth + "/" + month + "/" + year
+        if (pref.cekStartDate()!!){
+            startDateUpload.text = date
+            pref.setStartDate(false)
+        } else {
+            endDateUpload.text = date
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +112,12 @@ class UploadActivity : AppCompatActivity() {
         storageReference = firebaseStorage.reference
         linearDestination.setOnClickListener {
             showDialogCountry()
+        }
+        linearStartDate.setOnClickListener {
+            showDatePickerDialogStart()
+        }
+        linearEndDate.setOnClickListener {
+            showDatePickerDialogEnd()
         }
 
         imagePHolder.setOnClickListener {
@@ -112,9 +161,6 @@ class UploadActivity : AppCompatActivity() {
                 endDate.isNotEmpty()
             ) {
                 addToFirebase(destination, startDate, endDate)
-                if (dataxxx == null) {
-                    pref.saveCounterId(counter + 1)
-                }
             } else {
                 Toast.makeText(
                     this,
@@ -138,7 +184,7 @@ class UploadActivity : AppCompatActivity() {
 
     private fun addToFirebase(destination: String, startDate: String, endDate: String) {
         val nameXXX = UUID.randomUUID().toString()
-        val iddest = pref.getCounterId()
+        val iddest = UUID.randomUUID().toString()
         val uid = fAuth.currentUser?.uid
         val storageRef: StorageReference = storageReference
             .child("images/$uid/$nameXXX.${GetFileExtension(filePathImage)}")

@@ -24,19 +24,10 @@
         <TextView
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="18sp"
+                android:layout_gravity="center_vertical"
                 android:text="Destination"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
-        <!--<EditText-->
-        <!--android:background="@drawable/shape_upload"-->
-        <!--android:textSize="18sp"-->
-        <!--android:inputType="text"-->
-        <!--android:paddingHorizontal="10dp"-->
-        <!--android:textAlignment="textEnd"-->
-        <!--android:hint="Your Destination"-->
-        <!--android:id="@+id/uploadDestination"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"/>-->
         <LinearLayout
                 android:background="@drawable/shape_upload"
                 android:inputType="text"
@@ -67,19 +58,30 @@
         <TextView
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="18sp"
+                android:layout_gravity="center_vertical"
                 android:text="Traveling at"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
-        <EditText
+        <LinearLayout
                 android:background="@drawable/shape_upload"
-                android:textSize="18sp"
-                android:inputType="date"
-                android:hint="Date"
-                android:textAlignment="textEnd"
+                android:inputType="text"
                 android:paddingHorizontal="10dp"
-                android:id="@+id/startDateUpload"
+                android:id="@+id/linearStartDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|end"
+                android:focusable="true"
+                android:clickable="true">
+
+            <TextView
+                    android:id="@+id/startDateUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="StartDate"/>
+
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
             android:layout_marginTop="20dp"
@@ -90,19 +92,30 @@
         <TextView
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="18sp"
+                android:layout_gravity="center_vertical"
                 android:text="Go Home at"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
-        <EditText
+        <LinearLayout
                 android:background="@drawable/shape_upload"
-                android:textSize="18sp"
-                android:inputType="date"
-                android:hint="Date"
+                android:inputType="text"
                 android:paddingHorizontal="10dp"
-                android:textAlignment="textEnd"
-                android:id="@+id/endDateUpload"
+                android:id="@+id/linearEndDate"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|end"
+                android:focusable="true"
+                android:clickable="true">
+
+            <TextView
+                    android:id="@+id/endDateUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="EndDate"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <ProgressBar

@@ -1,27 +1,26 @@
 package com.abid.confiados.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import com.abid.confiados.R
 import com.abid.confiados.model.DestinationModel
 import com.abid.confiados.model.UserModel
 import com.bumptech.glide.Glide
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
+import de.hdodenhof.circleimageview.CircleImageView
 
 class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter.DestinationViewHolder> {
     lateinit var mCtx: Context
     lateinit var itemDestination: List<DestinationModel>
 
+    lateinit var dbRef: DatabaseReference
     constructor()
     constructor(mCtx: Context, list: List<DestinationModel>) {
         this.mCtx = mCtx
@@ -64,6 +63,27 @@ class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter
         p0.tv_destination.text = destinationModel.destination
         p0.tv_startDate.text = destinationModel.startDate
         p0.tv_endDate.text = destinationModel.endDate
+        p0.btEdit.setOnClickListener {
+            val builder = AlertDialog.Builder(mCtx)
+            builder.setMessage("Delete Item")
+            builder.setPositiveButton("No") { dialog, i ->
+                dialog.dismiss()
+            }
+            builder.setNegativeButton("Yes") { dialog, i ->
+                dbRef = FirebaseDatabase.getInstance()
+                    .getReference("destination")
+                dbRef.child(destinationModel.key!!).removeValue()
+                    .addOnSuccessListener {
+                        Toast.makeText(
+                            mCtx,
+                            "Delete Success",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+            }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+        }
     }
 
     inner class DestinationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -74,9 +94,11 @@ class DestinationProfileAdapter : RecyclerView.Adapter<DestinationProfileAdapter
         var tv_destination: TextView
         var tv_startDate: TextView
         var tv_endDate: TextView
+        var btEdit: CircleImageView
 
         init {
             llProfile = itemView.findViewById(R.id.llProfile)
+            btEdit = itemView.findViewById(R.id.bt_editDest)
             imageProfile = itemView.findViewById(R.id.profilePicTraveller)
             tv_name = itemView.findViewById(R.id.nameProfileTraveller)
             tv_gender = itemView.findViewById(R.id.genderProfileTraveller)

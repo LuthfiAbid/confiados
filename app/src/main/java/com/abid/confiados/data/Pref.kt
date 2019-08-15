@@ -78,6 +78,15 @@ class Pref {
     fun cekStatus(): Boolean? {
         return sharedSet.getBoolean(statusLogin, false)
     }
+    fun setStartDate(startdate: Boolean) {
+        val edit = sharedSet.edit()
+        edit.putBoolean("START DATE", startdate)
+        edit.apply()
+    }
+
+    fun cekStartDate(): Boolean? {
+        return sharedSet.getBoolean("START DATE", false)
+    }
 
     fun setNama(nama: String) {
         val edit = sharedSet.edit()

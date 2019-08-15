@@ -32,6 +32,10 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.abid.confiados.activity.ShowProfileOtherUser"
+            android:parentActivityName="com.abid.confiados.activity.MainActivity" >
+        </activity>
+        <activity
             android:name="com.abid.confiados.activity.AddConfiados"
             android:parentActivityName="com.abid.confiados.activity.Confiados" >
         </activity>

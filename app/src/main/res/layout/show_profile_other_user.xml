@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextColor="@android:color/white"
+            android:background="#033970"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbarO"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".activity.MainActivity">
+        <RelativeLayout
+                android:background="#033970"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/linearLayout">
+
+
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/maldives"
+                android:layout_margin="15dp"
+                android:id="@+id/profilePicO"/>
+
+        <TextView
+                android:layout_marginStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Luthfi Abid"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/profilePicO"
+                android:id="@+id/profileNameO"/>
+        <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="082156575523"
+                android:layout_below="@+id/profileNameO"
+                android:layout_toEndOf="@+id/profilePicO"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textColor="#fff"
+                android:id="@+id/noTeleponO"/>
+        <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/noTeleponO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/profilePicO"
+                android:text="Male"
+                android:textColor="#fff"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:id="@+id/profileGenderO"/>
+
+        <LinearLayout
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/linearLayout"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+            <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status :"
+                    android:textColor="#000000"
+                    android:textSize="20sp"/>
+            <TextView
+                    android:id="@+id/statusOtherTraveller"
+                    android:layout_marginHorizontal="20dp"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRIP"/>
+            <Button
+                    android:layout_margin="5dp"
+                    android:id="@+id/chatPersonFromProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:background="#DDD"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/recyclerViewOtherProfileDestination"
+            android:layout_height="match_parent"/>
+
+</LinearLayout>

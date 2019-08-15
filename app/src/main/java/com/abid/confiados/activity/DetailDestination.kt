@@ -1,12 +1,16 @@
 package com.abid.confiados.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.abid.confiados.R
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.detail_destination.*
 
-class DetailDestination: AppCompatActivity(){
+class DetailDestination : AppCompatActivity() {
+
+    lateinit var fAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,6 +18,8 @@ class DetailDestination: AppCompatActivity(){
         setSupportActionBar(toolbar_detail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.title = "DETAIL"
+        fAuth = FirebaseAuth.getInstance()
+        val iduser = intent.getStringExtra("iduser")
         val name = intent.getStringExtra("nama_user")
         val imageProf = intent.getStringExtra("foto_profile")
         val noTelp = intent.getStringExtra("notelp")
@@ -36,5 +42,15 @@ class DetailDestination: AppCompatActivity(){
         destination_on_detail.text = destination
         start_date_on_detail.text = startDate
         end_date_on_detail.text = endDate
+        photo_profile_on_detail.setOnClickListener {
+            if (iduser == fAuth.uid) {
+                startActivity(Intent(this, ProfileActivity::class.java))
+            } else {
+                val intent: Intent = Intent(this, ShowProfileOtherUser::class.java)
+                intent.putExtra("iduser", iduser)
+                intent.putExtra("name", name)
+                startActivity(intent)
+            }
+        }
     }
 }

@@ -33,7 +33,6 @@ class Confiados : AppCompatActivity() {
 
         addConfiados.setOnClickListener {
             startActivity(Intent(this, AddConfiados::class.java))
-            finish()
         }
 
         var linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

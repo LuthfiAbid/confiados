@@ -63,6 +63,9 @@
     </RelativeLayout>
 
     <ImageView
+
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:layout_below="@+id/header_detail"
             android:layout_centerHorizontal="true"
             android:layout_width="200dp"
@@ -72,75 +75,85 @@
             android:contentDescription="BUKTI"/>
 
     <LinearLayout
+            android:id="@+id/boxoboxobox"
+            android:paddingVertical="30dp"
+            android:layout_margin="20dp"
             android:background="#fff"
-            android:id="@+id/content_destination"
-            android:layout_marginTop="10dp"
+            android:orientation="vertical"
             android:layout_below="@+id/bukti_on_detail"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:layout_marginHorizontal="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <TextView
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Destination : "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Thailand"
-                android:gravity="end"
-                android:id="@+id/destination_on_detail"
+        <LinearLayout
+                android:background="#fff"
+                android:id="@+id/content_destination"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="40dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-            android:background="#fff"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/content_destination"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:id="@+id/content_start_date"
-            android:layout_marginHorizontal="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TextView
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Travelling at : "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="908798980"
-                android:gravity="end"
-                android:id="@+id/start_date_on_detail"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="Destination : "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="Thailand"
+                    android:gravity="end"
+                    android:id="@+id/destination_on_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:background="#fff"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/content_start_date"
+                android:layout_marginHorizontal="40dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-            android:background="#fff"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/content_start_date"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:id="@+id/content_end_date"
-            android:layout_marginHorizontal="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TextView
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="Go Home at : "
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:text="98098908908"
-                android:gravity="end"
-                android:id="@+id/end_date_on_detail"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="Travelling at : "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="908798980"
+                    android:gravity="end"
+                    android:id="@+id/start_date_on_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:background="#fff"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/content_end_date"
+                android:layout_marginHorizontal="40dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="Go Home at : "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="98098908908"
+                    android:gravity="end"
+                    android:id="@+id/end_date_on_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
     </LinearLayout>
 
-
+    <Button
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_selector"
+            android:text="CHAT"
+            android:layout_below="@+id/boxoboxobox"
+            android:id="@+id/btn_chat_on_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 </RelativeLayout>
