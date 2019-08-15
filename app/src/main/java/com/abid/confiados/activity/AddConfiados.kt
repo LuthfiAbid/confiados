@@ -29,7 +29,7 @@ import kotlinx.android.synthetic.main.item_list_confiados.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.ArrayList
+import java.util.*
 
 class AddConfiados : AppCompatActivity() {
 
@@ -152,7 +152,7 @@ class AddConfiados : AppCompatActivity() {
     }
 
     private fun addToFirebase(confiados: String, dest: String) {
-        val idcounter = pref.getCounterId()
+        val idcounter = UUID.randomUUID().toString()
         val uid = fAuth.currentUser?.uid
         dbRef = FirebaseDatabase.getInstance().getReference("dataConfiados/$idcounter")
         dbRef.child("confiados").setValue(confiados)

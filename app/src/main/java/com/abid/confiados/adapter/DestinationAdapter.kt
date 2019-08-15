@@ -22,6 +22,11 @@ import com.abid.confiados.model.UserModel
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
+import com.xwray.groupie.Item
+import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.lates_messages_row.view.*
+import kotlin.coroutines.coroutineContext
 
 class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationViewHolder> {
     lateinit var mCtx: Context
@@ -35,6 +40,9 @@ class DestinationAdapter : RecyclerView.Adapter<DestinationAdapter.DestinationVi
         this.mCtx = mCtx
         this.itemDestination = list
     }
+//    companion object {
+//        val USER_KEY = "USER_KEY"
+//    }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): DestinationViewHolder {
         val view: View = LayoutInflater.from(p0.context)

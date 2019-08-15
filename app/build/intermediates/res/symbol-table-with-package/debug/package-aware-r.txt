@@ -1181,7 +1181,6 @@ id btn_add_confiados
 id btn_chat_on_detail
 id btn_confiados
 id btn_login
-id btn_login_google
 id btn_logout
 id btn_save
 id btn_send
@@ -1195,6 +1194,7 @@ id center_horizontal
 id center_vertical
 id chains
 id chatFrom
+id chatMessage
 id chatPersonFromProfile
 id chatPersonMessage
 id chatTo
@@ -1224,7 +1224,6 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
-id destinationFilter
 id destinationTravellerConfiados
 id destination_on_detail
 id dimensions
@@ -1276,9 +1275,9 @@ id ifRoom
 id image
 id imagePHolder
 id imageProfileHolder
-id imageView
 id image_status
 id imgCountry
+id imgProfileLatesMessage
 id imgUser
 id img_placeholder_EditProfile
 id info
@@ -1317,6 +1316,7 @@ id main_container
 id masked
 id media_actions
 id message
+id message_textview_latest_message
 id middle
 id mini
 id mtrl_child_content_container
@@ -1329,7 +1329,6 @@ id nameTraveller
 id nameTraveller_on_detail
 id navigation
 id navigation_cart
-id navigation_chat
 id navigation_header_container
 id navigation_home
 id never
@@ -1350,8 +1349,8 @@ id percent
 id phoneTravellerConfiados
 id photo_profile_on_detail
 id pin
+id profPicChat
 id prof_conf
-id profileFrom
 id profileGender
 id profileGenderO
 id profileMain
@@ -1373,10 +1372,12 @@ id recyclerView
 id recyclerViewCart
 id recyclerViewConfiados
 id recyclerViewDestination
+id recyclerViewLatesMessages
 id recyclerViewOtherProfileDestination
 id recyclerViewProfileDestination
 id refresh
 id relative
+id relativeChat
 id right
 id right_icon
 id right_side
@@ -1444,6 +1445,7 @@ id textProfileDestination
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textUserLatesMessages
 id text_content
 id text_input_password_toggle
 id text_time
@@ -1452,13 +1454,16 @@ id textinput_error
 id textinput_helper_text
 id time
 id title
+id titleChat
 id titleDividerNoCustom
+id titleLatestChat
 id title_template
 id toolbar
 id toolbar2
 id toolbarAddConf
 id toolbarConf
 id toolbarEdit
+id toolbarLatestMessages
 id toolbarO
 id toolbarUpload
 id toolbar_detail
@@ -1581,6 +1586,7 @@ layout item_list_confiados
 layout item_list_destination
 layout item_list_destination_on_profile
 layout item_user
+layout lates_messages_row
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action

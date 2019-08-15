@@ -7,17 +7,37 @@
         android:background="#ffff"
         android:orientation="vertical">
     <android.support.v7.widget.Toolbar
+            android:background="#330000FF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="8dp"
-            android:id="@+id/toolbar2"/>
+            android:id="@+id/toolbar2">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="45dp"
+                    android:id="@+id/profPicChat"
+                    android:layout_height="45dp"/>
+            <TextView
+                    android:layout_toEndOf="@+id/profPicChat"
+                    android:layout_centerVertical="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:text="Tes User"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/titleChat"
+                    android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
     <android.support.v7.widget.RecyclerView
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/rcViewChat"
+            android:layout_above="@+id/relativeChat"
             android:layout_below="@+id/toolbar2"/>
     <RelativeLayout
+            android:id="@+id/relativeChat"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

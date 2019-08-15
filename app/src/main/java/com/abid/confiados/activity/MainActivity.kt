@@ -38,9 +38,6 @@ class MainActivity : AppCompatActivity() {
                CartFrag()
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_chat ->{
-
-            }
         }
         false
     }
@@ -79,10 +76,9 @@ class MainActivity : AppCompatActivity() {
                 }
             })
 
-        upload_destination.setOnClickListener {
-            startActivity(Intent(this, UploadActivity::class.java))
+        chatMessage.setOnClickListener {
+            startActivity(Intent(this,LatesMessagesActivity::class.java))
         }
-
         profileMain.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
